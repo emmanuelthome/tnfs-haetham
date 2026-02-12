@@ -1,5 +1,5 @@
 # from cube_enumerate import *
-# from utils_manu import indexed_set
+# from utils import indexed_set
 import itertools
 import functools
 import sage.misc.banner
@@ -30,7 +30,7 @@ import cube_enumerate
 import os
 import math
 from math import sqrt
-import utils_manu
+import utils
 import concurrent.futures
 import copy
 import sys
@@ -49,7 +49,7 @@ from sage.arith.misc import divisors
 
 
 # from sage.misc.cython import cython_import, cython_import_all
-# # utils_manu = cython_import("utils_manu.pyx")
+# # utils = cython_import("utils.pyx")
 # schnorr_euchner = cython_import("schnorr_euchner.pyx")
 import schnorr_euchner
 
@@ -936,8 +936,8 @@ class tnfs(object):
         self.__sm_setup__()
         # prepare empty lists so that we can do relation collection in
         # multiple calls
-        self.set_ideals_K1 = utils_manu.indexed_set()
-        self.set_ideals_K2 = utils_manu.indexed_set()
+        self.set_ideals_K1 = utils.indexed_set()
+        self.set_ideals_K2 = utils.indexed_set()
         self.stable_ideals_K1 = []
         self.stable_ideals_K2 = []
         self.list_phi = []
@@ -1076,7 +1076,7 @@ class tnfs(object):
                 # the rest of the code expects it!
                 I0 = D.pop()
                 I = I0
-                one_orbit = utils_manu.indexed_set()
+                one_orbit = utils.indexed_set()
                 while True:
                     one_orbit.add(I)
                     I = O.fractional_ideal(sigma(I))
@@ -1151,7 +1151,7 @@ class tnfs(object):
         to make sense out of this in a way that is consistent with all
         the cases I encounter.
 
-        Haetham : The above function does not always work.
+        TODO: The above function does not always work.
         Counter example :
         f1 = x^8 - 15*x^6 + 44*x^4 - 15*x^2 + 1
         with automorphism alpha : - (alpha+1)/(alpha-1)
@@ -1263,7 +1263,7 @@ class tnfs(object):
         self._create_ideals_set(primes1, primes2)
 
         print("Factoring into ideals")
-        set_rows = utils_manu.indexed_set()
+        set_rows = utils.indexed_set()
         list_phi = []
         st = -cputime()
         for phi in set_phi:
@@ -1896,7 +1896,7 @@ class tnfs(object):
         self.compressor1 = compressor_from_orbits(zeta, o1, self.power)
         self.compressor2 = compressor_from_orbits(zeta, o2, self.power)
 
-        # code by Haetham. This generalizes Schiro
+        # This generalizes Schiro
         assert self.n % d == 0
         self.C = matrix(GF(self.ell), self.n, d)
         for j in range(d):
@@ -2020,10 +2020,9 @@ class tnfs(object):
             print([self.vlog_map1(self.KhP(list(self.K1(u)))) for u in U1])
             print([self.vlog_map2(self.KhP(list(self.K2(u)))) for u in U2])
 
-            # Haetham : j'ajoute cela pour voir si nos SM sont bien non nuls sur
-            # les unités dont le vlog sont non nul
-
-                        # Ici notre Schiro 
+            # Adding this to see if our SMs do cancel on units that have
+            # non zero vlog
+            # Here our SM
             if d==1 or d==2:
                 print("Schirokauer maps on units")
                 assert self.n % d == 0
@@ -2037,7 +2036,7 @@ class tnfs(object):
                 print([self.SM1(self.KhP(list(self.K1(u)))) * self.C_double for u in U1])
                 print([self.SM2(self.KhP(list(self.K2(u)))) * self.C for u in U2])
 
-            # Ici Schiro habituel, pas forcement nul sur les elements fixes par l'auto ou ces puissances
+            # Here usual SM, not necessarily zero of the fixed elements
             else:
                 print("Schirokauer maps on units")
                 print([self.SM1(self.KhP(list(self.K1(u)))) for u in U1])
