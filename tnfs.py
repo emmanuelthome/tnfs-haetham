@@ -3,11 +3,14 @@
 import itertools
 import functools
 import sage.misc.banner
+import psutil
+import os
 
 if sage.misc.banner.require_version(10, 1, 0):
     from sage.misc.timing import cputime
 else:
     from sage.misc.misc import cputime
+from sage.matrix.constructor import zero_matrix
 from sage.rings.rational_field import QQ
 from sage.arith.misc import legendre_symbol, gcd, next_prime
 from sage.arith.functions import lcm
@@ -18,13 +21,14 @@ from sage.rings.fast_arith import prime_range
 from sage.misc.prandom import randint
 from sage.misc.functional import log
 from sage.matrix.special import block_matrix, block_diagonal_matrix
+from sage.matrix.special import identity_matrix
 from sage.matrix.constructor import matrix
+from sage.modules.free_quadratic_module_integer_symmetric import IntegralLattice
 from sage.modules.free_module_element import vector
 from collections import defaultdict
 from sage.misc.prandom import randrange
 from sage.categories.homset import Hom
 from sage.rings.real_mpfr import RR
-from time import time
 from sage.misc.misc_c import prod
 import cube_enumerate
 import os
@@ -36,8 +40,10 @@ import copy
 import sys
 import pickle
 import subprocess
+import re
 from sage.arith.power import generic_power
 from sage.arith.misc import divisors
+from time import time, sleep
 
 # from fpylll import IntegerMatrix
 # from fpylll.util import gaussian_heuristic
@@ -61,7 +67,7 @@ def _prime_is_ok_tnfs(p, h, f1, f2_splitter, dh, df):
     if [c.degree() for c, k in h.change_ring(GF(p)).factor()] != [dh]:
         return False
 
-    # Pourquoi c'est pas [df, ... autre chose]?
+    # 
     # if [c.degree() for c, k in f1.change_ring(GF(p)).factor()] != [df, df]:
     #    print(3)
     #    return False
@@ -175,6 +181,7 @@ class relation_search(object):
         self.st = 0
         self.st0 = -time()
         self.multithreaded = 0
+        self.external_source = None
 
     def __enter__(self):
         print("Looking for smooth a,b pairs")
@@ -337,6 +344,11 @@ class relation_search(object):
         print(f"Done collecting results from {taskname}")
 
     def exhaustive_search(self, *args, **kwargs):
+        if type(self.external_source) == list:
+            qrels, cuberels = self.external_source
+            self.import_relations_from_file(cuberels)
+            return self.set_phi, self.primes1, self.primes2
+
         E = (
             kwargs.get("El", 0)
             or kwargs.get("exploration_bound", 0)
@@ -447,7 +459,7 @@ class relation_search(object):
                 for rf, m in f.roots(GF(q)):
                     if m > 1:
                         continue
-                    if (rh, rf) in met: 
+                    if (rh, rf) in met:
                         continue
                     rrh, rrf = rh, rf
                     for i in range(self.TT.n):
@@ -497,6 +509,55 @@ class relation_search(object):
         # st += cputime()
         # print(f"Creating q-list ({len(qlist)} ideals): done in {st:.2f}s")
 
+    def import_relations_from_file(self, f):
+        print("#" * 60)
+        print("#" * 60)
+        print("##")
+        print("## importing relations from", f)
+        print("##")
+        print("#" * 60)
+        print("#" * 60)
+        q0 = self.q0
+        q1 = self.q1
+        S = self.S
+        offset = 0
+        for line in open(f):
+            line = line.strip('\0\n\r ')
+            if m := re.match(r"[\d\.]+ [\d\.]+ (\d+) \((\d+), (\d+)\) (.*)$", line):
+                nphis_file = int(m.group(1))
+                phi = self.TT.KhP(m.group(4))
+                np1 = self.TT.quicknorm1(phi)
+                np2 = self.TT.quicknorm2(phi)
+                fac1 = np1.factor()
+                fac2 = np2.factor()
+                if _largest_factor(fac1) >= max(q1, S):
+                    print("Ignoring relation: largest prime factor on side 0"
+                          f" is {_largest_factor(fac1)},"
+                          " which is inconsistent"
+                          f" with smoothness bound={S} and q1={q1}")
+                    continue
+                if _largest_factor(fac2) >= max(q1, S):
+                    print("Ignoring relation: largest prime factor on side 1"
+                          f" is {_largest_factor(fac2)},"
+                          " which is inconsistent"
+                          f" with smoothness bound={S} and q1={q1}")
+                    continue
+                for p, c in fac1:
+                    self.primes1.add(p)
+                for p, c in fac2:
+                    self.primes2.add(p)
+                self.set_phi.append(phi)
+                print(len(self.set_phi), nphis_file, phi)
+                if len(self.set_phi) != nphis_file + offset:
+                    if nphis_file == 1:
+                        offset = len(self.set_phi) - nphis_file
+                        print("# adjusting relation count offset to {offset}")
+                        continue
+                    raise RuntimeError("missed relation: we have collected"
+                                       f" {len(self.set_phi)} so far, but"
+                                       " the file says that we should"
+                                       f" have a total of {nphis_file}.")
+
     def special_q_sieving(self, *args, **kwargs):
         # We want to explore in a ball of radius exploration_bound, so
         # with squared norm <= n*exploration_bound^2
@@ -508,13 +569,9 @@ class relation_search(object):
             or kwargs.get("exploration_bound", 0)
             or kwargs.get("E", 0)
         )
-        S = kwargs.get("smoothness_bound", 0) or kwargs.get("S", 0)
-        q0 = kwargs.get("q0", None)
-        q1 = kwargs.get("q1", None)
-        if q0 is None:
-            q0 = S // 2
-        if q1 is None:
-            q1 = 3 * S // 2
+        q0 = self.q0
+        q1 = self.q1
+        S = self.S
         # radius = sqrt(2*n_tau) * E
         # pick a radius so that we have roughly the same number of
         # in the orthotope and in the total of all the q-lattices.
@@ -561,23 +618,42 @@ class relation_search(object):
         # this is just an iterable.
         tasks = self.special_q_sieving_qlist(sqside, q0, q1, S)
 
-        if self.multithreaded <= 1:
+        cmd = ["sage",
+               "tnfs-client.sage",
+               self.TT._serialize(),
+               "sieve-one-special-q",
+               ]
+        if type(self.external_source) == list:
+            qrels, cuberels = self.external_source
+            self.import_relations_from_file(qrels)
+            return self.set_phi, self.primes1, self.primes2
+        elif self.multithreaded <= 1:
             for t in tasks:
                 self.sieve_one_q(*t, radius, S)
+        elif self.external_source == 'jobpick':
+            alltasks = list(tasks)
+            S = set(alltasks)
+            for t in alltasks:
+                name = "{},q={},rh={},rf={}".format(*t)
+                if os.path.exists(f"jobs/done/{name}"):
+                    self.catch_result(name, open(f"jobs/done/{name}.out", "r"))
+                    del S[name]
+                else:
+                    with open(f"jobs/todo/{name}", "w") as f:
+                        print(*cmd, *args, file=f)
+            while (name := S.pop()):
+                i = 0
+                while not os.path.exists(f"jobs/done/{name}"):
+                    print(f"Waiting for {name} (i={i})")
+                    sleep(float(0.01 * 2**i))
+                    if i < 15:
+                        i += 1
+                self.catch_result(name, open(f"jobs/done/{name}.out", "r"))
         else:
-
             def reenter(R, name, *args):
-                cmd = [
-                    "sage",
-                    "tnfs-client.sage",
-                    R.TT._serialize(),
-                    "sieve-one-special-q",
-                ] + [str(x) for x in args]
-                cmd = " ".join(cmd)
-                print(cmd)
-                cmd = cmd.split()
-                with subprocess.Popen(
-                    cmd, bufsize=0, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE
+                sp = " ".join([*cmd] + [str(x) for x in args])
+                with subprocess.Popen(sp.split(),
+                    bufsize=0, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE
                 ) as T:
                     # Because we have the GIL here, this safely appends
                     # to the global stuff, I think
@@ -700,7 +776,7 @@ class tnfs(object):
             p = -50
         elif family == "example6e":  # eta=2
             h = x**2 + x + 1
-            f2_family = x**3 - T*x**2 -(T+3)*x - 1 
+            f2_family = x**3 - T*x**2 -(T+3)*x - 1
             f2_splitter = T**2 + 1
             f1 = f2_family.resultant(f2_splitter)
             tau = lambda iota: 1 / iota
@@ -708,7 +784,7 @@ class tnfs(object):
             n_tau = 2
             n_rho = 3
             n = 6
-            p = -50 
+            p = -50
         elif family == "example6_disc_f2_pos":
             h = x**3 - x**2 - 2 * x + 1
             f2_family = x**2 - 4 * T * x + 1
@@ -743,7 +819,7 @@ class tnfs(object):
             n_rho = 3
             n = 12
             p = -50
-        
+
         elif family == "example12c":
             h = x**4 - x**3 + x**2 - x + 1
             f2_family = x**3 - T * x**2 - (T + 3) * x - 1
@@ -845,7 +921,7 @@ class tnfs(object):
             )
             if ell is None:
                 ell, _ = self.ZP.cyclotomic_polynomial(n)(p).factor()[-1]
-                print(f"ell={ell}")
+                print(f"ell = {ell}")
             # Now construct f2 with the conjugation method
             u, v = _rational_reconstruction_insist(f2_splitter.roots(GF(p))[0][0])
             assert f2_family.degree() == 1
@@ -946,7 +1022,7 @@ class tnfs(object):
     We can serialize/unserialize a tnfs object in two ways.
 
     First, to bytes. To do so, here is an example:
-    
+
     sage: import tnfs
     sage: import io
     sage: TT = tnfs.tnfs('example12', p=-200)
@@ -1065,7 +1141,14 @@ class tnfs(object):
         )
 
     def _decompose_primes(self, O, sigma, primes, set_ideals, stable_ideals):
-        for p in sorted(primes):
+        frac = 128
+        N = len(primes)
+        tt = time()
+        for i,p in enumerate(sorted(primes)):
+            if i and i >= N / frac:
+                print(f"# {i} primes (>= 1/{frac}) at {time()-tt:.2f}",
+                      f"(avg {(time()-tt)*1000/i:.0f} ms each)")
+                frac = frac // 2
             D = set([I for I, k in O.fractional_ideal(p).factor()])
             while D:
                 # pick an ideal at random, transform it by the
@@ -1103,8 +1186,17 @@ class tnfs(object):
         The list of phi is returned, together with the list of met primes
         on each side
         """
+        self.smoothness_bound = kwargs.get("smoothness_bound", 0) or kwargs.get("S", 0)
         with relation_search(self) as R:
             R.multithreaded = kwargs.get("multithreaded", 0)
+            R.external_source = kwargs.get("external_source")
+            R.S = kwargs.get("smoothness_bound", 0) or kwargs.get("S", 0)
+            R.q0 = kwargs.get("q0", None)
+            R.q1 = kwargs.get("q1", None)
+            if R.q0 is None:
+                R.q0 = R.S // 2
+            if R.q1 is None:
+                R.q1 = 3 * R.S // 2
             R.special_q_sieving(**kwargs)
             R.exhaustive_search(**kwargs)
 
@@ -1135,7 +1227,7 @@ class tnfs(object):
     #     nn = rT.numerator()
     #     dd = rT.denominator()
     #     return sum([s(phi[i]) * nn ** (i) * dd ** (d - i) for i in range(v, d + 1)])
-    
+
     def sigma_KhP(self, phi):
         """
         Compute a function (polynomial over Kh) that gives the same quick
@@ -1151,12 +1243,12 @@ class tnfs(object):
         to make sense out of this in a way that is consistent with all
         the cases I encounter.
 
-        TODO: The above function does not always work.
+        H: The above function does not always work.
         Counter example :
         f1 = x^8 - 15*x^6 + 44*x^4 - 15*x^2 + 1
         with automorphism alpha : - (alpha+1)/(alpha-1)
         Applying the above function on phi = -T we get T+1 while we should get (T+1)/(T-1)
-    
+
         """
         KhP = self.KhP
         T = KhP.gen()
@@ -1166,7 +1258,7 @@ class tnfs(object):
         dd = phi.denominator()
         dd = KhP(dd)
         nn_conj = sum([self.sigma_h(nn[i]) * rT ** (i) for i in range(nn.degree()+1)])
-        dd_conj = sum([self.sigma_h(dd[i]) * rT ** (i) for i in range(dd.degree()+1)]) 
+        dd_conj = sum([self.sigma_h(dd[i]) * rT ** (i) for i in range(dd.degree()+1)])
         return nn_conj/dd_conj
 
     def conjugates_phi(self, phi):
@@ -1198,16 +1290,17 @@ class tnfs(object):
         return C
 
     def _create_ideals_set(self, primes1, primes2):
-        print("Decomposing primes")
+        print("Decomposing primes in K1")
         st = -cputime()
         self._decompose_primes(
             self.OK1, self.sigma_K1, primes1, self.set_ideals_K1, self.stable_ideals_K1
         )
+        print("Decomposing primes in K2")
         self._decompose_primes(
             self.OK2, self.sigma_K2, primes2, self.set_ideals_K2, self.stable_ideals_K2
         )
         st += cputime()
-        print(f"Decomposing primes: done in {st:.2f}")
+        print(f"Decomposing primes (K1 and K2): done in {st:.2f} s")
 
     def _factor_one_phi(self, phi, stable_ideals=False):
         """
@@ -1253,6 +1346,7 @@ class tnfs(object):
             return fac12, sfac12
 
     def relation_collection(self, *args, **kwargs):
+        self.smoothness_bound = kwargs.get("smoothness_bound", 0) or kwargs.get("S", 0)
         T = self.KhP.gen()
         alpha = self.K1.gen()
         beta = self.K2.gen()
@@ -1289,6 +1383,7 @@ class tnfs(object):
 
     @functools.cache
     def __SM1x_setup(self):
+        print("# inside __SM1x_setup (should be called only once)")
         self.SM1x_data = self.__SMx_setup(self.OK1, self.OK1a)
         # It's not a real technical obstacle, of course, but here
         # we're in the Galois case and we're super lazy, so let's
@@ -1301,6 +1396,7 @@ class tnfs(object):
 
     @functools.cache
     def __SM2x_setup(self):
+        print("# inside __SM2x_setup (should be called only once)")
         self.SM2x_data = self.__SMx_setup(self.OK2, self.OK2a)
         for I in self.SM2x_data[1]:
             assert self.expo2 == self.ell ** (I.residue_class_degree()) - 1
@@ -1643,9 +1739,20 @@ class tnfs(object):
         S1rows = []
         S2rows = []
 
-        for phi, fac12 in self.list_phi:
+        print("Computing Schirokauer maps")
+        frac = 1024
+        N = len(self.list_phi)
+        tt = time()
+        for i, (phi, fac12) in enumerate(self.list_phi):
+            if i and i >= N / frac:
+                ram = psutil.Process(os.getpid()).memory_info().rss / 2**30
+                print(f"# {i} rows (>= 1/{frac}) at {time()-tt:.2f}",
+                      f"(avg {(time()-tt)*1000/i:.0f} ms each)",
+                      f"(memory {ram:.2f} GB)")
+                frac = frac // 2
             S1rows.append(self.SM1(phi))
             S2rows.append(self.SM2(phi))
+        print(f"# done at {time()-tt:.2f}")
 
         self.S1 = matrix(S1rows)
         self.S2 = matrix(S2rows)
@@ -1708,6 +1815,7 @@ class tnfs(object):
         assert self.MS1 * self.all_vlogs1 + self.MS2 * self.all_vlogs2 == 0
 
     def to_vector1(self, phi):
+        phi = self.KhP(list(phi))
         v0 = vector(GF(self.ell), [0] * len(self.set_ideals_K1))
         for c, k in self.OK1.fractional_ideal(phi(self.K1.gen())).factor():
             if c in self.stable_ideals_K1:
@@ -1721,6 +1829,7 @@ class tnfs(object):
         return vector(list(v0) + list(v1))
 
     def to_vector2(self, phi):
+        phi = self.KhP(list(phi))
         v0 = vector(GF(self.ell), [0] * len(self.set_ideals_K2))
         for c, k in self.OK2.fractional_ideal(phi(self.K2.gen())).factor():
             if c in self.stable_ideals_K2:
@@ -1751,7 +1860,7 @@ class tnfs(object):
         return self.to_vector1(phi) * self.all_vlogs1
 
     def vlog_map2(self, phi):
-        # We arbitrarily put a minus sign so that in apparence, both vlog
+        # We arbitrarily put a minus sign so that in appearance, both vlog
         # maps appear to be equal instead of opposite to eachother
         return -self.to_vector2(phi) * self.all_vlogs2
 
@@ -1846,6 +1955,73 @@ class tnfs(object):
             + ", ".join([f"{k}: {d[k]}" for k in sorted(d.keys())])
         )
 
+    def _Fp_coords(self, u):
+        """
+        Coordinates of u in the power basis of self.Fpn over GF(p).
+        """
+        u = self.Fpn(u)
+        coeffs = list(u.polynomial())
+        coeffs += [0] * (self.n - len(coeffs))
+        return vector(GF(self.p), coeffs)
+
+    @functools.cache
+    def _K1_lift_matrix(self):
+        """
+        Matrix whose columns are the F_p-coordinate vectors of the basis
+        (iota_p^i * z^j)_{0 <= i < eta, 0 <= j < kappa} of F_{p^n}.
+        """
+        Fp = GF(self.p)
+        eta = self.h.degree()
+        kappa = self.n_rho
+
+        basis = [self.iota_p**i * self.z**j for j in range(kappa) for i in range(eta)]
+        M = matrix(Fp, [self._Fp_coords(b) for b in basis]).transpose()
+        assert M.is_invertible()
+        return M
+
+
+    def lift_Fpn_to_K1(self, t):
+        """
+        Return a lift of t in K1, compatible with K1_to_Fpn:
+        i.e, self.K1_to_Fpn(self.lift_Fpn_to_K1(t)) == t
+        """
+        t = self.Fpn(t)
+
+        Fp = GF(self.p)
+        eta = self.h.degree()
+        kappa = self.n_rho
+
+        M = self._K1_lift_matrix()
+        coords = M.solve_right(self._Fp_coords(t))
+        iota = self.Kh.gen()
+        alpha = self.K1.gen()
+
+        coeffs = []
+        for j in range(kappa):
+            cj = sum(ZZ(coords[j * eta + i]) * iota**i for i in range(eta))
+            coeffs.append(cj)
+
+        lifted = sum(coeffs[j] * alpha**j for j in range(kappa))
+
+        assert self.K1_to_Fpn(lifted) == t
+        return lifted
+
+    def randomize_until_smooth_1(self, t):
+        """Randomizes t by self.logbase until its lift to K1 is smooth."""
+        alpha = self.K1.gen()
+        while True: # until it decomposes in the factor basis
+            # randomize target
+            random_exponent = randint(1, self.ell)
+            t_randomized = t * self.logbase**random_exponent
+            # lift to K1
+            t_randomized_lifted = self.lift_Fpn_to_K1(t_randomized)
+            # check smoothness
+            N = ZZ(t_randomized_lifted.absolute_norm().abs())
+            fac = N.factor(limit=self.smoothness_bound)
+            large_factor = fac[-1][0]
+            if large_factor <= self.smoothness_bound:
+                return t_randomized, random_exponent
+
     # This linear algebra call solves a much smaller linear system.
     def modified_linear_algebra(self, d=1):
         print("starting modified_linear_algebra")
@@ -1868,7 +2044,7 @@ class tnfs(object):
             p = I.absolute_norm()
             print(f"Info: OK2-ideal of norm {p} was never encountered: {I}")
 
-        # setting the right correspondance between the automorphism and the automorphism in the finite field
+        # setting the right correspondence between the automorphism and the automorphism in the finite field
         iota = self.Kh.gen()
         alpha = self.K1.gen()
         phi_1 = self.pick_1()
@@ -1890,13 +2066,13 @@ class tnfs(object):
                 )
                 print(self.power)
                 break
-        
+
         assert self.power
         zeta = GF(self.ell)(self.p)
         self.compressor1 = compressor_from_orbits(zeta, o1, self.power)
         self.compressor2 = compressor_from_orbits(zeta, o2, self.power)
 
-        # This generalizes Schiro
+        # code by H. This generalizes Schiro
         assert self.n % d == 0
         self.C = matrix(GF(self.ell), self.n, d)
         for j in range(d):
@@ -2006,7 +2182,7 @@ class tnfs(object):
                 print("Skipping unit computations since discriminants are large")
                 return
         print("Computing unit groups")
-        U1 = self.K1.units(proof=False)  # units calcule directement des générateurs
+        U1 = self.K1.units(proof=False)
         U2 = self.K2.units(proof=False)
         print("Minimum polynomial (in number fields) of units")
         print([self.K1a(self.K1(u)).minpoly() for u in U1])
@@ -2020,9 +2196,6 @@ class tnfs(object):
             print([self.vlog_map1(self.KhP(list(self.K1(u)))) for u in U1])
             print([self.vlog_map2(self.KhP(list(self.K2(u)))) for u in U2])
 
-            # Adding this to see if our SMs do cancel on units that have
-            # non zero vlog
-            # Here our SM
             if d==1 or d==2:
                 print("Schirokauer maps on units")
                 assert self.n % d == 0
@@ -2036,12 +2209,253 @@ class tnfs(object):
                 print([self.SM1(self.KhP(list(self.K1(u)))) * self.C_double for u in U1])
                 print([self.SM2(self.KhP(list(self.K2(u)))) * self.C for u in U2])
 
-            # Here usual SM, not necessarily zero of the fixed elements
             else:
                 print("Schirokauer maps on units")
                 print([self.SM1(self.KhP(list(self.K1(u)))) for u in U1])
                 print([self.SM2(self.KhP(list(self.K2(u)))) for u in U2])
-            
+    # ------------------ Individual Logarithm Step -----------------------
+
+    def _Fp_coords(self, u):
+        """
+        Coordinates of u in the power basis of self.Fpn over GF(p).
+        """
+        u = self.Fpn(u)
+        coeffs = list(u.polynomial())
+        coeffs += [0] * (self.n - len(coeffs))
+        return vector(GF(self.p), coeffs)
+
+    @functools.cache
+    def _Fp_lift_matrix(self):
+        """
+        Matrix whose columns are the F_p-coordinate vectors of the basis
+        (iota_p^i * z^j)_{0 <= i < eta, 0 <= j < kappa} of F_{p^n}.
+
+        (i.e. (1, iota_p, ..., iota_p^(eta-1), z, z*iota_p, ...) )
+        """
+        Fp = GF(self.p)
+        eta = self.h.degree()
+        kappa = self.n_rho
+
+        proj_Fpn = [self.iota_p**i * self.z**j
+                    for j in range(kappa) for i in range(eta)]
+        M = matrix(Fp, [self._Fp_coords(b) for b in proj_Fpn]).transpose()
+        assert M.is_invertible()
+        return M
+
+    def lift_Fpn_to_K12(self, t, side):
+        """
+        Return a lift of t in K1 or K2, compatible with K1_to_Fpn or K2_to_Fpn:
+        i.e for side = 1, self.K1_to_Fpn(self.lift_Fpn_to_K11(t,1)) == t
+        """
+        t = self.Fpn(t)
+        Fp = GF(self.p)
+        eta = self.h.degree()
+        kappa = self.n_rho
+
+        M = self._Fp_lift_matrix()
+        coords = M.solve_right(self._Fp_coords(t))   # in GF(p), tower coords
+
+        iota = self.Kh.gen()
+        gen = self.K1.gen() if side == 1 else self.K2.gen()
+
+        proj_K12 = [iota**i * gen**j
+                    for j in range(kappa) for i in range(eta)]
+
+        return sum([c.lift_centered()*a for c,a in zip(coords, proj_K12)])
+
+    @functools.cache
+    def _Fp_lift_matrix_inv(self):
+        """
+        Inverse of _Fp_lift_matrix() over GF(p).
+        Columns of _Fp_lift_matrix are the power-basis coords of the tower basis
+        (iota_p^i * z^j). So for any t:
+            power_coords(t) = M * tower_coords(t)
+        hence:
+            tower_coords(t) = M^{-1} * power_coords(t).
+        """
+        M = self._Fp_lift_matrix()
+        return M.inverse()
+
+    def _Fp_tower_coords(self, t):
+        """
+        Coordinates of t in the tower basis (iota_p^i * z^j) over GF(p)
+        """
+        t = self.Fpn(t)
+        v_power = self._Fp_coords(t)
+        v_tower = self._Fp_lift_matrix_inv() * v_power
+        return v_tower
+
+    def smoothing(self, target, side, ntry=20):
+        """
+        Try to find a smooth lift of target. We factor everything we
+        find, and return the best one.
+
+        The returned value is a triple (N, z, z_lift), where z is equivalent
+        to the target, z_lift is a lift of z in the number field on
+        the given side, and N is the numerator of the absolute norm of
+        z_lift
+        """
+        n = self.n
+        p = self.p
+        eta = self.h.degree()
+        kappa = self.n_rho
+        Fp = GF(p)
+
+        d = divisors(n)[-2]
+        g = self.logbase
+        U = g ** ((p**n - 1) // (p**d - 1))
+
+        M_first = zero_matrix(Fp, d, n)
+        t = self.Fpn(target)
+        for i in range(d):
+            if i > 0:
+                t *= U
+            coords = self._Fp_tower_coords(t)
+            for j in range(n):
+                M_first[i, j] = coords[j]
+        M_first.echelonize()
+
+        L = zero_matrix(ZZ, n, n)
+        L[:n-d,:n-d] = p * identity_matrix(ZZ, n-d, n-d)
+        L[n-d:,:] = M_first.change_ring(ZZ)
+
+        lat = IntegralLattice(ZZ(n), matrix(ZZ, n, n, L))
+
+        # lattice elements reprensent number field elements according to
+        # this tower basis.
+        iota = self.Kh.gen()
+        gen = self.K1.gen() if side == 1 else self.K2.gen()
+        proj_K12 = [iota**i * gen**j
+                    for j in range(kappa) for i in range(eta)]
+
+        proj_Fpn = [self.iota_p**i * self.z**j
+                    for j in range(kappa) for i in range(eta)]
+        O = self.OK1 if side == 1 else self.OK2
+
+        best = None
+
+        for v in itertools.islice(lat.enumerate_short_vectors(), min(2*n,ntry)):
+
+            # reconstruct element in Fpn in tower basis
+            cand = sum([c*a for c,a in zip(v, proj_Fpn)])
+            cand_lift = sum([c*a for c,a in zip(v, proj_K12)])
+            if cand == 0:
+                continue
+
+            N = ZZ(O.fractional_ideal(cand_lift).numerator().absolute_norm())
+
+            if best is None or N < best[0]:
+                best = (N, cand, cand_lift)
+
+        if best is None:
+            raise RuntimeError("No nonzero candidate found in tested LLL vectors")
+
+        assert (best[1]/target) ** self.cofac == 1
+        return best
+
+    def find_equivalent_smooth(self, t, side):
+        """
+        return s,a,r such that t * logbase^r is a smooth number s on
+        which vlog can be computed, and vlog(s) == a, with vlog given by
+        the side argument.
+
+        Note that this is with respect to the non-normalized vlog map, so
+        we cannot assert that vlog(logbase) == 1
+        """
+        vlog_map = self.vlog_map1 if side ==1 else self.vlog_map2
+        attempts = 0
+        while True:
+            attempts += 1
+            #print("side = ", side)
+            random_exponent = randint(1, self.ell-1)
+            t_randomized = t * self.logbase**random_exponent
+            # t_randomized_lifted = self.lift_Fpn_to_K12(t_randomized, side)
+            # N_initial = ZZ((t_randomized_lifted.absolute_norm()).abs().numerator())
+            # print("Norm before smoothing = ", N_initial)
+
+            N, t_new, t_new_lifted = self.smoothing(t_randomized, side)
+
+            # integer smoothness test
+            fac = N.abs().factor(limit=self.smoothness_bound)
+            if fac and fac[-1][0] > self.smoothness_bound:
+                # print("Target not smooth")
+                # print("Target's norm = ", N, " in bits : ", RR(log(N,2)))
+                # print("Smoothness bound = ", self.smoothness_bound, " in bits : ", RR(log(self.smoothness_bound,2)))
+                # print("largest factor above smoothness bound = ", fac[-1][0], " in bits : ", RR(log(fac[-1][0],2)))
+                continue
+
+            # ensure ideal factors belong to factor basis
+            try:
+                # raise NotSmooth if an ideal is missing from factor basis
+                a = vlog_map(t_new_lifted)
+                print(f"# found decomposition after {attempts} attempts")
+                return t_new, a, random_exponent
+            except NotSmooth:
+                # print("Ideal not in factor basis")
+                continue
+
+    @functools.cache
+    def get_vlog_of_basis(self, side):
+        """
+        This needs to be called just once. We want to compute the image
+        of the vlog map for a lift of the target group generator. All
+        other discrete logs will be obtained by scaling with respect to
+        this value
+        """
+        vlog_map = self.vlog_map1 if side == 1 else self.vlog_map2
+
+        msg = f"Getting image of vlog{side} on lift of generator {self.logbase}"
+        print(msg)
+
+        s, a, r = self.find_equivalent_smooth(self.logbase, side)
+
+        vlog_logbase = GF(self.ell)(a / (r + 1))
+
+        if vlog_logbase == 0:
+            raise RuntimeError("vlog_logbase = 0 (trivial character/log map)")
+
+        print(f"{msg}: {vlog_logbase}")
+
+        return vlog_logbase
+
+
+    def individual_log(self, target):
+        """
+        Returns the logarithm of the target modulo ell in basis self.logbase.
+        """
+        # Choose side of smaller norms
+        t1 = self.lift_Fpn_to_K12(target,1).absolute_norm().abs().numerator()
+        t2 = self.lift_Fpn_to_K12(target,2).absolute_norm().abs().numerator()
+        side = 1 if t1 < t2 else 2;
+
+        # virtual logarithm of self.logbase
+        vlog_logbase = self.get_vlog_of_basis(side)
+
+        # virtual logarithm of target
+        s, a, r = self.find_equivalent_smooth(target, side)
+
+        # vlog_target = a - r * vlog_logbase
+
+        # log target
+        log_target = ZZ(GF(self.ell)(a / vlog_logbase - r))
+        print("-------")
+        print("target in subgroup is y =", self.Fpn(target)**self.cofac)
+        print("log(y) is x =", log_target)
+        # Check in the subgroup of order ell
+        print("Check g^x =", (self.logbase**log_target)**self.cofac)
+        assert (self.logbase**log_target / target)**self.cofac == 1
+        print("Check passed! (we do have g^x == y)")
+
+        return log_target
+
+    def individual_log_random_elements(self, ntrials=10):
+        print("\nChecking result:",
+              f"computing individual logs of {ntrials} random elements")
+        print("logarithm basis is ", self.logbase,"\n")
+        for _ in range(ntrials):
+            target = self.logbase**(randint(1, self.ell-1))
+            self.individual_log(target)
+
 
 
     def print_primary_info(self):

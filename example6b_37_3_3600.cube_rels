@@ -1,0 +1,776 @@
+0.88 0.00 1 (1, 1) -iota*T + 1
+1.12 0.03 2 (4, 5) (3*iota^2 - 6*iota - 1)*T - 3*iota
+1.13 0.03 3 (6, 7) (iota^2 - 2*iota - 1)*T - iota - 4
+1.13 0.04 4 (8, 10) (iota^2 - 3*iota - 1)*T - iota - 3
+1.13 0.04 5 (10, 12) (iota^2 - 4*iota - 1)*T - iota - 2
+1.14 0.04 6 (11, 14) -T - 6
+1.15 0.04 7 (12, 17) (-2*iota^2 + iota - 1)*T + 2*iota - 7
+1.22 0.06 8 (14, 19) -2*T - iota^2 + iota - 4
+1.27 0.08 9 (15, 20) (3*iota^2 - 2*iota - 3)*T - 2*iota^2 - iota
+1.28 0.08 10 (16, 22) (2*iota^2 - iota - 3)*T - 2*iota^2 - 1
+1.29 0.09 11 (16, 24) (iota^2 - iota - 3)*T - 2*iota^2 + iota - 1
+1.31 0.09 12 (18, 26) (-iota^2 - 3*iota - 3)*T - 2*iota^2 + 3*iota + 1
+1.31 0.09 13 (20, 27) (-2*iota^2 - 3)*T - 2*iota^2 + 4*iota - 2
+1.32 0.10 14 (22, 28) (-4*iota^2 - 3)*T - 2*iota^2 + 6*iota - 2
+1.36 0.11 15 (24, 29) (iota^2 - iota - 4)*T - 3*iota^2 + 2*iota + 1
+1.49 0.15 16 (25, 29) (-3*iota^2 + 3*iota + 3)*T + 2*iota^2 - 5*iota - 2
+1.66 0.17 17 (27, 30) (-iota^2 - iota + 1)*T + iota^2 - 6*iota - 2
+2.06 0.24 18 (29, 31) (-2*iota^2 + 2*iota - 4)*T - 3*iota^2 - iota - 3
+2.10 0.25 19 (30, 32) (-iota^2 + iota - 5)*T - 4*iota^2 - iota
+2.78 0.38 20 (31, 32) -2*T + 4*iota^2 - 3*iota + 3
+3.12 0.44 21 (31, 33) (-2*iota^2 - 5*iota - 6)*T + 2*iota^2 + iota
+3.17 0.45 22 (33, 33) (-6*iota^2 + 3*iota - 3)*T + 3*iota^2 - 2*iota + 1
+3.22 0.46 23 (33, 35) (-iota^2 + iota - 6)*T + iota^2 - 5*iota + 1
+Now sieving (281,iota-234,alpha-47; 6 conjugates), radius=8.56, gamma1=1.41
+Lattice points: 3617
+3.53 0.47 24 (33, 35) -T - iota
+3.69 0.47 25 (34, 37) (4*iota^2 + iota - 2)*T + 5*iota^2 - 5
+3.79 0.50 26 (34, 39) (2*iota^2 + iota)*T + 3*iota^2 - 2*iota - 3
+3.80 0.51 27 (34, 40) (2*iota^2 - 2)*T + 2*iota^2 - 4*iota - 3
+3.88 0.53 28 (34, 41) (iota^2 - iota + 4)*T - 2
+3.89 0.53 29 (34, 41) (iota^2 - iota + 1)*T - 3*iota - 2
+3.89 0.53 30 (34, 43) (iota^2 - iota)*T - 4*iota - 2
+3.96 0.55 31 (34, 43) 6*T - 1
+3.99 0.57 32 (36, 43) (-4*iota + 2)*T - 4*iota^2 - 4*iota - 1
+4.04 0.58 33 (36, 43) (-2*iota^2 + 3*iota + 7)*T + iota^2 - 3*iota + 1
+4.09 0.60 34 (36, 43) (2*iota^2 + iota + 6)*T + 3*iota^2 - 2*iota - 4
+4.17 0.62 35 (36, 44) (-2*iota - 6)*T + 4*iota^2 + iota + 1
+4.25 0.64 36 (37, 46) (-2*iota^2 + 2)*T + 4*iota^2 + 5*iota + 3
+4.54 0.69 37 (38, 46) (-iota^2 - 5*iota + 5)*T + 4*iota + 1
+4.56 0.70 38 (38, 47) (-2*iota^2 + 4)*T + 4*iota^2 + iota + 2
+4.72 0.72 39 (38, 48) (iota^2 - 5*iota - 1)*T + 2*iota^2 - 4*iota - 2
+4.82 0.74 40 (38, 48) (-iota^2 - 5*iota)*T + 6*iota^2 + 1
+4.88 0.75 41 (38, 48) (-3*iota^2 + 2*iota - 1)*T - 6*iota^2 + 3*iota - 3
+5.30 0.83 42 (38, 49) (-3*iota^2 - 2*iota - 2)*T - 4*iota^2 - 3*iota - 4
+5.52 0.88 43 (38, 49) (-3*iota^2 - 4*iota - 2)*T + 4*iota - 3
+Now sieving (349,iota-216,alpha-309; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 2931
+6.21 0.93 44 (38, 49) iota*T - 2*iota - 2
+6.24 0.94 45 (38, 49) -T + 2*iota^2 - 4*iota - 3
+6.26 0.95 46 (39, 50) (iota^2 - 2*iota)*T + 4*iota^2 - 3*iota - 1
+6.28 0.95 47 (39, 51) (-iota^2 + 3*iota + 2)*T - 2*iota^2 + 4*iota
+6.30 0.96 48 (39, 51) (-2*iota^2 + 3*iota - 1)*T - iota - 4
+6.32 0.97 49 (39, 52) (-3*iota^2 + iota - 4)*T + 2*iota^2 - 2*iota - 4
+6.36 0.98 50 (39, 53) (iota^2 - iota + 2)*T + 6*iota^2 - 2*iota - 2
+6.36 0.98 51 (39, 53) (-4*iota^2 + 5*iota - 1)*T - 2*iota^2 + 4*iota - 3
+6.40 0.99 52 (40, 53) (-iota^2 + iota + 2)*T + 4*iota^2 + 3*iota - 1
+6.40 0.99 53 (40, 54) (-3*iota^2 + iota - 2)*T + 4*iota^2 + iota - 3
+6.47 1.01 54 (41, 55) (2*iota^2 - iota + 3)*T - 6*iota^2 + 4*iota + 2
+6.51 1.02 55 (41, 55) (iota^2 - 4*iota - 1)*T - 2*iota^2 + iota + 1
+6.58 1.04 56 (41, 55) (-2*iota^2 - iota - 4)*T - 2*iota^2 - iota - 4
+6.59 1.04 57 (41, 56) (2*iota^2 + iota + 4)*T - 2*iota^2 - iota - 4
+6.60 1.04 58 (41, 56) (2*iota^2 - 2*iota + 3)*T + iota - 1
+7.20 1.16 59 (41, 56) (4*iota^2 + 3*iota + 4)*T + 3*iota^2 + 2*iota + 2
+Now sieving (349,iota-216,alpha-96; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 2931
+8.45 1.31 60 (41, 56) (-2*iota - 2)*T - iota
+8.52 1.33 61 (41, 56) (-2*iota^2 + 4*iota)*T + iota^2 - 3*iota - 2
+8.54 1.33 62 (42, 57) (iota - 2)*T + 2*iota^2 - 2*iota + 1
+8.60 1.35 63 (42, 57) (6*iota^2 - 2*iota - 2)*T - iota^2 + iota - 2
+8.63 1.36 64 (42, 59) (4*iota^2 + 3*iota - 1)*T + iota^2 - iota - 2
+8.64 1.36 65 (42, 59) (4*iota^2 + iota - 3)*T + 3*iota^2 - iota + 2
+8.69 1.37 66 (42, 59) (-2*iota^2 - 2*iota + 5)*T - 3*iota^2 - 2
+8.78 1.39 67 (42, 60) (2*iota^2 - 4*iota + 2)*T + iota + 3
+8.81 1.40 68 (42, 61) (-2*iota^2 + iota + 2)*T - 4*iota - 2
+8.82 1.40 69 (42, 62) (-iota + 1)*T + 2*iota^2 - 2*iota + 3
+8.92 1.43 70 (42, 63) 2*iota^2*T - 4*iota - 3
+8.92 1.43 71 (42, 63) (2*iota^2 - 3*iota - 3)*T + iota^2 - 5*iota - 1
+9.00 1.45 72 (42, 63) (-2*iota^2 - 6*iota + 3)*T - 3*iota + 3
+9.65 1.57 73 (42, 65) (-5*iota^2 + iota - 1)*T + 5*iota^2 - 3*iota + 1
+9.69 1.58 74 (43, 65) (iota^2 - 4*iota - 3)*T + 4*iota^2 + 2
+9.77 1.60 75 (43, 65) (5*iota^2 + iota + 1)*T + 4*iota^2 + 3*iota + 1
+10.19 1.66 76 (43, 65) (2*iota^2 + 2*iota + 2)*T + 3*iota^2 + 5*iota - 5
+Now sieving (421,iota-305,alpha-272; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2445
+10.64 1.69 77 (43, 66) (-iota^2 + iota + 1)*T + iota^2
+10.71 1.69 78 (43, 66) 3*iota*T - 3*iota + 4
+10.74 1.70 79 (43, 67) (iota^2 + iota)*T - iota + 3
+10.75 1.70 80 (43, 67) (3*iota^2 - iota - 3)*T + 2
+10.79 1.72 81 (43, 67) (2*iota^2 - iota - 2)*T + 4*iota^2 + 3*iota
+10.82 1.73 82 (43, 67) 2*T + 5*iota^2 + 4*iota
+10.82 1.73 83 (43, 67) (iota^2 - iota)*T + 6*iota^2 + 5*iota - 1
+10.90 1.75 84 (43, 67) (5*iota^2 - 3*iota - 2)*T + iota^2 + 3*iota + 3
+11.00 1.78 85 (43, 67) (-2*iota^2 + 6*iota + 2)*T + 3*iota^2 - 3*iota - 3
+11.04 1.78 86 (43, 67) (2*iota^2 + 1)*T - iota^2 - 4
+11.14 1.80 87 (43, 67) (4*iota^2 - iota + 3)*T - 5*iota^2 - iota
+11.22 1.82 88 (43, 67) (3*iota^2 + 3*iota)*T + 4*iota^2
+11.67 1.91 89 (43, 67) (-iota^2 - 4*iota - 1)*T + 5*iota^2 + iota - 3
+11.81 1.93 90 (43, 67) (-iota^2 - iota + 4)*T + 4*iota^2 - iota + 4
+12.15 1.98 91 (43, 67) (4*iota^2 + 2)*T + iota^2 - 4*iota - 3
+12.17 1.98 92 (43, 68) (3*iota^2 + 3)*T + 5*iota^2 - iota - 5
+12.18 1.98 93 (43, 68) (4*iota^2 + 3*iota + 1)*T + 3*iota^2 - 6*iota
+Now sieving (421,iota-305,alpha-243; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2445
+12.49 2.00 94 (43, 68) -iota^2*T - iota^2 + iota + 1
+12.62 2.02 95 (43, 68) (-iota^2 - iota - 2)*T + iota^2 + 1
+12.66 2.04 96 (43, 69) (2*iota^2 + 2*iota - 4)*T + iota^2 + iota + 1
+12.66 2.04 97 (43, 69) (-iota^2 + 2*iota - 4)*T - 2*iota^2 + 4*iota + 4
+12.69 2.05 98 (43, 70) (-4*iota^2 + 2*iota - 2)*T + iota^2 + 3*iota - 5
+12.69 2.05 99 (43, 70) (3*iota - 3)*T + 3*iota^2 + iota - 6
+12.91 2.10 100 (43, 70) (-3*iota^2 + 3*iota + 3)*T - 2*iota^2 + 6*iota + 2
+12.91 2.10 101 (43, 71) (5*iota^2 + 4*iota + 2)*T + 4*iota^2 - 3
+12.92 2.10 102 (43, 71) (2*iota^2 + 5*iota + 1)*T - iota^2 + 5*iota + 3
+12.94 2.11 103 (43, 71) (-iota^2 - 4*iota + 4)*T + 5*iota^2 - 3*iota
+13.09 2.14 104 (43, 71) -4*iota^2*T + 3*iota^2 + 3*iota
+13.19 2.16 105 (43, 71) (2*iota + 5)*T + 4*iota^2 + 3*iota + 1
+Now sieving (449,iota-406,alpha-346; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2283
+14.38 2.32 106 (43, 71) (-iota + 1)*T - iota - 1
+14.45 2.32 107 (43, 72) (4*iota^2 - iota + 1)*T + 7*iota^2 + iota - 2
+14.48 2.33 108 (43, 72) (4*iota^2 - 1)*T + 5*iota^2 + 2*iota + 2
+14.51 2.34 109 (43, 72) (2*iota + 1)*T + iota^2 - 4*iota
+14.54 2.35 110 (43, 72) 2*iota^2*T + iota^2 - 2*iota + 3
+14.54 2.35 111 (43, 72) (2*iota^2 - 2*iota + 2)*T + iota^2 - 4*iota + 1
+14.54 2.35 112 (43, 72) (iota^2 + iota)*T - 3*iota + 3
+14.59 2.36 113 (44, 72) (iota^2 + 5*iota)*T + 3*iota^2 - 5*iota + 2
+14.67 2.39 114 (44, 72) (-2*iota^2 + 2*iota - 4)*T + 2*iota^2 + 2*iota - 3
+14.87 2.43 115 (44, 74) (-iota^2 - 3*iota)*T - 2*iota^2 - 7*iota
+15.00 2.45 116 (44, 74) (iota^2 - 6*iota - 5)*T - 2*iota + 2
+15.10 2.46 117 (44, 74) (-iota + 7)*T + 4*iota^2 - 1
+15.12 2.47 118 (44, 74) (-2*iota + 7)*T + 2*iota^2 - iota + 1
+15.18 2.48 119 (44, 74) (-6*iota^2 + 2*iota + 2)*T - iota^2 + iota - 2
+15.19 2.48 120 (44, 74) -3*iota^2*T + 5*iota + 2
+15.33 2.50 121 (44, 74) (-iota^2 + 3*iota + 2)*T + 6*iota^2
+15.58 2.54 122 (44, 74) (-3*iota^2 + 3*iota - 3)*T + 2*iota^2 + 4
+15.65 2.55 123 (44, 75) -iota*T + 4*iota^2 - 4*iota + 4
+15.76 2.58 124 (44, 75) (-4*iota^2 - 2*iota - 4)*T - iota^2 - 3*iota + 4
+15.87 2.60 125 (44, 75) (-4*iota^2 + 1)*T + 5*iota^2 + 3
+Now sieving (449,iota-406,alpha-279; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2283
+16.14 2.61 126 (44, 75) (-iota - 1)*T + iota - 1
+16.21 2.62 127 (44, 75) (-2*iota^2 + 4*iota + 2)*T - iota^2 + 4*iota + 1
+16.23 2.62 128 (44, 75) (-6*iota^2 + 2)*T + 3*iota^2 + 1
+16.24 2.63 129 (44, 75) (-iota^2 + 3*iota - 1)*T + 3*iota
+16.25 2.63 130 (44, 75) (-2*iota^2 + 2*iota - 1)*T + iota^2 + 2*iota
+16.28 2.64 131 (44, 75) (iota^2 + 5*iota - 2)*T + iota + 1
+16.28 2.64 132 (44, 75) (iota^2 + 3*iota - 4)*T + 3*iota - 1
+16.29 2.64 133 (44, 75) (3*iota - 3)*T + iota^2 + iota
+16.29 2.64 134 (44, 75) (2*iota - 4)*T + iota^2 + 2*iota - 1
+16.30 2.65 135 (44, 75) (-iota^2 + 2*iota - 3)*T + 2*iota^2
+16.32 2.66 136 (44, 75) (iota^2 + 5*iota - 3)*T + 2*iota^2 - 3*iota + 2
+16.44 2.69 137 (44, 75) (-2*iota^2 - 2*iota + 3)*T - 2*iota^2 + 2*iota - 4
+16.64 2.73 138 (44, 75) (3*iota^2 + 5*iota - 4)*T - 3*iota - 2
+16.86 2.76 139 (44, 75) (-4*iota^2 + 1)*T - iota + 7
+16.92 2.77 140 (44, 75) (iota^2 - iota + 2)*T - 6*iota^2 + 2*iota + 2
+16.94 2.78 141 (44, 75) (-3*iota^2 - 7*iota)*T - 2*iota^2
+16.98 2.78 142 (44, 75) (2*iota^2 - 5*iota - 5)*T - 3*iota^2 - 1
+17.09 2.80 143 (44, 75) -6*iota^2*T - iota^2 + 3*iota + 2
+17.33 2.83 144 (44, 75) (-iota^2 + 6*iota + 1)*T - 4*iota^2 - iota + 2
+17.36 2.84 145 (44, 75) (iota^2 + 3*iota - 5)*T - 4*iota^2 + 2*iota - 2
+17.41 2.85 146 (44, 75) (-4*iota^2 + 4*iota - 4)*T - iota
+Now sieving (461,iota-240,alpha-375; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2212
+17.92 2.91 147 (44, 75) (-iota - 1)*T + 2*iota
+17.92 2.91 148 (44, 75) (-iota^2 - iota - 2)*T + iota - 1
+17.96 2.92 149 (44, 75) (3*iota + 1)*T - 2*iota^2 - 5*iota - 1
+18.13 2.97 150 (44, 75) (-2*iota^2 + 1)*T + iota^2 + 3*iota + 3
+18.18 2.98 151 (44, 75) (-iota^2 + 3*iota + 1)*T - 3*iota^2 + 2
+18.21 2.99 152 (44, 75) (-2*iota^2 + 3*iota - 2)*T - 5*iota^2
+18.24 3.00 153 (44, 76) (-6*iota^2 + 3*iota - 1)*T - 2*iota^2 + 2
+18.26 3.00 154 (44, 76) (-3*iota^2 + 3*iota)*T - 4*iota^2 + 4*iota + 4
+18.29 3.01 155 (44, 77) (3*iota^2 + 1)*T + 3*iota^2 - 7*iota + 1
+18.39 3.03 156 (44, 78) (-2*iota - 1)*T + 4*iota^2 - iota + 3
+18.49 3.06 157 (44, 78) (2*iota^2 - 5)*T - 4*iota^2 + iota + 1
+18.53 3.06 158 (44, 78) (-4*iota^2 + 2*iota - 2)*T + iota^2 - 6*iota + 2
+18.55 3.07 159 (44, 78) (-3*iota^2 + 3*iota - 2)*T - iota^2 - 6*iota + 2
+18.55 3.07 160 (44, 78) (iota^2 + 2*iota + 1)*T - iota^2 + 6
+19.23 3.19 161 (44, 78) (-2*iota^2 - 2*iota - 2)*T - iota^2 - 7*iota
+19.38 3.21 162 (44, 78) (-3*iota^2 - 5*iota + 5)*T - 2*iota^2 - 2*iota - 2
+Now sieving (461,iota-240,alpha-327; 6 conjugates), radius=8.56, gamma1=2.00
+Lattice points: 2212
+19.66 3.22 163 (44, 78) (-iota + 1)*T - iota^2 - iota - 2
+19.66 3.22 164 (44, 78) -2*iota*T - iota - 1
+19.69 3.23 165 (44, 78) (2*iota^2 + iota + 1)*T + iota - 1
+19.69 3.23 166 (44, 78) (2*iota^2 - iota + 1)*T - 2
+19.78 3.25 167 (44, 78) (-iota^2 + 3*iota - 1)*T - 4*iota^2 + 2*iota + 1
+19.83 3.26 168 (44, 78) (3*iota^2 + 4*iota - 2)*T - iota^2 + 5*iota + 3
+19.90 3.28 169 (44, 78) (4*iota^2 - 4*iota - 4)*T - 3*iota^2 + 3*iota
+19.95 3.29 170 (44, 78) (-3*iota^2 - 3*iota + 3)*T + iota^2 - 3*iota + 2
+20.00 3.31 171 (44, 78) (iota^2 - 6*iota + 2)*T + 4*iota^2 - 2*iota + 2
+20.12 3.33 172 (44, 79) (2*iota^2 - 4*iota + 4)*T - 2*iota^2 - iota - 2
+20.22 3.35 173 (44, 79) (3*iota^2 - 7*iota + 1)*T - 3*iota^2 - 1
+20.49 3.40 174 (44, 79) (-iota^2 + 3*iota + 4)*T + 6*iota^2 + 2*iota - 1
+20.69 3.44 175 (44, 79) (-6*iota^2 - 1)*T - 5*iota^2 + 2*iota - 1
+21.02 3.48 176 (44, 79) (-4*iota^2 + iota - 1)*T + 2*iota^2 + 7*iota + 1
+21.03 3.49 177 (44, 79) (-2*iota^2 - iota - 1)*T + 3*iota^2 + 7*iota
+Now sieving (601,iota-309,alpha-429; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 1695
+21.27 3.49 178 (44, 79) -2*iota^2*T - iota^2 + iota + 1
+21.28 3.49 179 (44, 79) (2*iota^2 - 1)*T + 3*iota^2 - 3*iota
+21.35 3.51 180 (44, 79) (3*iota^2 - 3)*T + 2*iota^2 - 5*iota + 2
+21.36 3.51 181 (44, 79) (-2*iota + 1)*T - 3*iota^2 + 2*iota + 2
+21.36 3.51 182 (44, 79) (4*iota^2 - 2*iota - 1)*T + 3*iota^2 - 4*iota + 2
+21.37 3.52 183 (44, 79) (5*iota^2 - 4*iota + 1)*T + 4*iota^2 - 3*iota + 2
+21.40 3.52 184 (44, 80) (iota^2 - 2*iota - 1)*T - 4*iota^2 + 4
+21.46 3.54 185 (44, 80) -7*iota^2*T - 2*iota^2
+21.57 3.56 186 (44, 80) (5*iota^2 - 4*iota + 2)*T - 2*iota^2 - 2*iota - 2
+21.61 3.57 187 (44, 80) (-iota^2 - 1)*T - iota^2 - 6*iota - 5
+21.68 3.58 188 (44, 80) (3*iota - 4)*T + 3*iota^2 + 3*iota
+21.89 3.62 189 (44, 80) (4*iota^2 - iota - 2)*T - 5*iota^2 + 4*iota - 1
+22.09 3.65 190 (44, 80) (-5*iota - 1)*T - 4*iota^2 + 2*iota + 2
+22.10 3.65 191 (44, 80) (3*iota^2 - 5*iota - 3)*T - 4*iota^2 - iota + 3
+Now sieving (601,iota-309,alpha-304; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 1695
+22.55 3.70 192 (44, 80) (-iota^2 + iota + 1)*T + 2*iota^2
+22.57 3.71 193 (44, 80) (iota^2 + iota)*T - iota^2 + 2*iota - 2
+22.61 3.72 194 (44, 80) (2*iota^2 - 5*iota + 2)*T - 3*iota^2 + 3
+22.62 3.72 195 (44, 80) (-2*iota^2 - iota + 3)*T + iota^2 + 2
+22.67 3.73 196 (44, 80) (-4*iota^2 + 4)*T - iota^2 + 2*iota + 1
+22.68 3.74 197 (44, 80) (-6*iota^2 + 2*iota)*T - 5*iota^2 + 2*iota - 1
+22.70 3.74 198 (44, 80) (2*iota^2 + 5*iota - 2)*T + 4*iota^2 - 4*iota - 1
+22.70 3.74 199 (44, 80) (6*iota^2 + 3*iota - 2)*T + iota^2 - 2*iota - 2
+22.84 3.77 200 (44, 80) 2*iota^2*T - 7*iota^2
+22.93 3.79 201 (44, 80) (5*iota + 2)*T - 4*iota^2 - 2*iota
+23.05 3.81 202 (44, 80) (5*iota^2 - 4*iota + 1)*T + 4*iota^2 - iota - 2
+23.09 3.82 203 (44, 80) (-5*iota^2 + iota - 4)*T - 3*iota - 3
+23.13 3.82 204 (44, 80) 2*iota*T + iota^2 + 3*iota - 7
+23.17 3.83 205 (44, 80) (-2*iota^2 + iota)*T - 2*iota^2 + 3*iota - 6
+23.21 3.83 206 (44, 80) (4*iota^2 - 2*iota - 2)*T - 5*iota - 1
+23.42 3.87 207 (44, 80) (-3*iota^2 + 2*iota + 1)*T - iota^2 - 7*iota + 1
+23.48 3.88 208 (44, 80) (-3*iota^2 - 3*iota - 2)*T + 3*iota^2 - 4*iota - 4
+23.65 3.91 209 (44, 80) (iota + 5)*T - 2*iota^2 - 6*iota - 2
+Now sieving (701,iota-313,alpha-696; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 1489
+23.88 3.92 210 (44, 80) (iota^2 + 4*iota + 3)*T - 3*iota^2
+23.91 3.93 211 (44, 80) (-iota^2 + iota + 5)*T - 2*iota^2
+23.94 3.94 212 (44, 80) (-iota^2 - 2*iota + 6)*T - iota^2 - iota
+23.96 3.95 213 (44, 80) (2*iota^2 - 2)*T - iota - 5
+23.96 3.95 214 (44, 81) -T - 5
+23.97 3.95 215 (44, 81) (-2*iota + 2)*T - iota - 3
+24.13 3.99 216 (44, 81) (2*iota + 2)*T - iota^2 + 5*iota + 2
+24.23 4.01 217 (44, 81) (iota + 6)*T - 2*iota^2 + 4*iota + 1
+24.29 4.02 218 (44, 81) (2*iota^2 + 2*iota + 6)*T - 3*iota^2 + 3*iota - 2
+24.33 4.03 219 (44, 81) (iota^2 + 4*iota - 3)*T + 4*iota^2 - 3*iota + 3
+24.52 4.06 220 (44, 81) (iota^2 + 7*iota)*T + 2*iota^2 + 2*iota + 2
+24.68 4.08 221 (44, 81) (5*iota^2 + 3*iota + 2)*T + 2*iota^2 - 2*iota - 4
+24.70 4.09 222 (44, 81) (3*iota^2 + 3*iota + 3)*T + 3*iota^2 + 4*iota + 4
+Now sieving (701,iota-313,alpha-561; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 1489
+24.92 4.10 223 (44, 81) (-iota + 1)*T - iota^2 + iota - 1
+25.01 4.11 224 (44, 81) (-2*iota - 1)*T + 4*iota - 5
+25.01 4.11 225 (44, 82) -5*T + 1
+25.02 4.12 226 (44, 82) (-4*iota - 2)*T - 5*iota^2 + 3*iota - 1
+25.04 4.12 227 (44, 82) (-iota^2 + iota - 3)*T + 2*iota^2 - iota - 2
+25.04 4.12 228 (44, 82) (-iota^2 - 3)*T - iota - 1
+25.05 4.12 229 (44, 82) (-iota^2 - iota - 2)*T - iota^2 - 2
+25.07 4.13 230 (44, 82) -2*iota^2*T + iota^2 - iota - 5
+25.14 4.15 231 (44, 82) (-3*iota^2 - 3)*T + iota^2 - 2*iota - 6
+25.28 4.18 232 (44, 82) (6*iota + 1)*T + 3*iota^2 - 3
+25.72 4.26 233 (44, 82) (-4*iota^2 - 2*iota - 6)*T - 2*iota^2 + 2*iota + 3
+Now sieving (769,iota-458,alpha-576; 6 conjugates), radius=8.56, gamma1=2.83
+Lattice points: 1321
+26.06 4.29 234 (44, 82) (-iota^2 - 2*iota + 1)*T + iota^2 + 1
+26.06 4.29 235 (44, 82) (iota^2 + iota - 3)*T + iota^2
+26.10 4.30 236 (44, 82) (3*iota^2 - 2*iota + 2)*T + 2*iota^2 - 2*iota - 5
+26.12 4.31 237 (44, 82) (4*iota^2 - 4)*T + 3*iota^2 - 3
+26.14 4.31 238 (44, 82) (-iota + 4)*T - 3*iota^2 + 4*iota
+26.15 4.32 239 (44, 82) (2*iota^2 - 4)*T + iota^2 + 4*iota + 1
+26.40 4.36 240 (44, 82) (-2*iota^2 + 2*iota + 4)*T + 3*iota^2 - iota + 4
+26.59 4.40 241 (44, 82) (2*iota^2 - iota + 3)*T + iota^2 + 2*iota + 2
+26.92 4.46 242 (44, 82) (4*iota^2 - 2*iota + 1)*T - 3*iota^2 + 6
+Now sieving (769,iota-458,alpha-514; 6 conjugates), radius=8.56, gamma1=2.83
+Lattice points: 1321
+27.08 4.46 243 (44, 83) (-iota^2 - 1)*T - iota^2 - 2*iota + 1
+27.13 4.47 244 (44, 83) (iota^2 + 4*iota + 2)*T + 3*iota
+27.13 4.47 245 (44, 83) (4*iota + 1)*T - iota^2 + iota + 1
+27.15 4.48 246 (44, 83) (-2*iota^2 + 2*iota - 2)*T - iota^2 + iota - 4
+27.16 4.48 247 (44, 83) (3*iota^2 - 3)*T - 4*iota^2 + 4
+27.24 4.50 248 (44, 83) (-3*iota^2 - 7*iota - 3)*T - 2
+27.28 4.51 249 (44, 83) (iota^2 - 3*iota + 1)*T + iota^2 + 6*iota - 1
+27.44 4.54 250 (44, 83) (-3*iota^2 - 2*iota - 2)*T - 4*iota^2 + 3*iota + 4
+27.46 4.54 251 (44, 83) (2*iota^2 - iota + 2)*T - iota^2 - 7*iota + 1
+27.61 4.58 252 (44, 83) (iota^2 + 4)*T + iota^2 + 2*iota - 5
+27.79 4.60 253 (44, 83) (2*iota^2 + iota + 4)*T - 3*iota^2 + 3*iota + 3
+28.00 4.64 254 (44, 83) (-3*iota^2 + 6)*T - 4*iota^2 + 2*iota - 1
+Now sieving (881,iota-783,alpha-702; 6 conjugates), radius=8.56, gamma1=2.45
+Lattice points: 1155
+28.15 4.65 255 (44, 83) (-iota^2 - iota + 1)*T + iota^2 + iota + 1
+28.20 4.65 256 (44, 83) (-2*iota^2 + 3)*T - 3*iota^2 + 3*iota
+28.22 4.66 257 (44, 83) (-3*iota^2 - 2*iota + 4)*T + 3*iota - 1
+28.22 4.66 258 (44, 83) (-iota^2 + iota + 1)*T - 2*iota^2 + 2*iota - 6
+28.23 4.66 259 (44, 83) (-iota^2 - 3*iota + 4)*T - 2*iota + 1
+28.24 4.66 260 (44, 83) (-3*iota^2 - 4*iota + 5)*T + 2*iota^2 + iota
+28.24 4.66 261 (44, 83) (-2*iota^2 - iota + 2)*T + iota^2 + 2*iota - 7
+28.25 4.67 262 (44, 83) (-4*iota + 4)*T + iota^2 - 5*iota + 1
+28.26 4.67 263 (44, 83) (-2*iota^2 - 3*iota + 3)*T + 3*iota^2 - 6
+28.28 4.68 264 (44, 83) (4*iota^2 + 5*iota - 3)*T + iota^2 - 2*iota + 3
+28.39 4.70 265 (44, 83) (4*iota^2 + 4*iota + 1)*T - 3*iota^2 - 5*iota - 1
+28.42 4.70 266 (44, 83) (-iota^2 + iota + 7)*T - 3*iota^2 + iota + 2
+28.47 4.72 267 (44, 83) (2*iota^2 + 4*iota + 4)*T + 3*iota^2 - iota - 1
+28.62 4.75 268 (44, 84) (-3*iota^2 + 3*iota - 3)*T + iota^2 + 2*iota + 6
+28.91 4.79 269 (44, 84) (-6*iota^2 + iota + 1)*T + iota^2 - 4*iota + 4
+Now sieving (881,iota-783,alpha-315; 6 conjugates), radius=8.56, gamma1=2.45
+Lattice points: 1155
+29.07 4.80 270 (44, 84) (-iota^2 - iota - 1)*T - iota^2 - iota + 1
+29.12 4.81 271 (44, 84) (3*iota^2 + 2*iota - 2)*T - iota + 3
+29.13 4.81 272 (44, 84) (3*iota^2 + iota + 1)*T + 2
+29.17 4.82 273 (44, 85) (-2*iota^2 + iota + 7)*T - iota^2 - 2*iota + 2
+29.50 4.88 274 (44, 85) (-iota^2 - 2*iota - 5)*T + 4*iota^2 - 3
+Now sieving (1009,iota-510,alpha-984; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 1007
+29.96 4.95 275 (44, 85) 2*iota^2*T - 1
+29.97 4.95 276 (44, 85) (2*iota^2 - 5*iota - 1)*T + iota^2 + 2*iota + 2
+30.04 4.97 277 (44, 85) (-5*iota^2 + 4*iota - 2)*T - 2
+30.06 4.97 278 (44, 85) (5*iota^2 - iota - 3)*T + iota^2 + 2*iota - 4
+30.11 4.99 279 (44, 85) (3*iota^2 - 3*iota + 5)*T - iota^2 - iota - 1
+30.13 4.99 280 (44, 85) (-3*iota^2 - 3*iota + 3)*T + 6*iota^2 - 2*iota - 2
+30.45 5.04 281 (44, 85) (-6*iota^2 + iota)*T - 3*iota^2 - 4*iota + 1
+30.49 5.05 282 (44, 85) (-4*iota - 3)*T + 5*iota^2 - 3*iota - 3
+30.55 5.06 283 (44, 85) (-4*iota^2 + 3)*T - 5*iota^2 - 4*iota - 2
+Now sieving (1009,iota-510,alpha-444; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 1007
+30.74 5.08 284 (44, 85) -T - 2*iota^2
+30.78 5.09 285 (44, 85) (6*iota^2 - 3*iota - 3)*T - iota^2 - iota - 1
+30.82 5.10 286 (44, 85) (iota^2 + 2*iota + 2)*T - 2*iota^2 + 5*iota + 1
+30.83 5.10 287 (44, 85) (2*iota^2 + iota - 5)*T - 3*iota^2 - iota + 3
+30.84 5.10 288 (44, 85) (iota^2 + 2*iota - 4)*T - 5*iota^2 + iota + 3
+30.84 5.10 289 (44, 85) (3*iota - 2)*T - 5*iota^2 + 3*iota + 3
+30.85 5.10 290 (44, 85) (-iota^2 + 4*iota + 1)*T - 3*iota^2 + 5*iota + 3
+30.88 5.11 291 (44, 85) (-4*iota + 5)*T - 3*iota - 3
+30.92 5.12 292 (44, 85) (-6*iota^2 + 2*iota + 2)*T - 3*iota^2 - 3*iota + 3
+31.10 5.15 293 (44, 85) (-3*iota^2 + 2*iota - 2)*T - 4*iota - 5
+31.40 5.20 294 (44, 85) (6*iota^2 + 1)*T - iota^2 - 5*iota
+Now sieving (1021,iota-783,alpha-785; 6 conjugates), radius=8.56, gamma1=2.45
+Lattice points: 1014
+31.69 5.21 295 (44, 85) -3*T - 5*iota^2 - 3*iota + 2
+31.70 5.22 296 (44, 85) (-2*iota - 3)*T - 3*iota^2 + iota + 2
+31.70 5.22 297 (44, 85) (-3*iota - 3)*T - 2*iota^2 + 3*iota + 2
+31.71 5.22 298 (44, 85) (-5*iota + 1)*T + 3*iota - 6
+31.76 5.23 299 (44, 85) -2*iota^2*T + iota^2 - 2*iota - 6
+31.77 5.24 300 (44, 85) (-2*iota^2 - 2*iota - 3)*T + 3*iota^2 + 5*iota
+31.80 5.25 301 (44, 85) (-4*iota^2 + 2*iota - 2)*T + 5*iota^2 - 4
+31.89 5.27 302 (44, 85) (-3*iota + 5)*T + 2*iota^2 - iota + 3
+32.02 5.30 303 (44, 85) (-4*iota^2 + 2)*T + 6*iota^2 - 2*iota + 1
+32.45 5.37 304 (44, 85) (2*iota^2 - 2*iota - 4)*T + 5*iota^2 + iota
+Now sieving (1021,iota-783,alpha-411; 6 conjugates), radius=8.56, gamma1=2.45
+Lattice points: 1014
+32.86 5.39 305 (44, 85) (5*iota^2 + 3*iota - 2)*T - 3
+32.87 5.40 306 (44, 85) (2*iota^2 - 3*iota - 2)*T - 3*iota - 3
+32.90 5.41 307 (44, 85) (iota^2 + 1)*T - iota^2 - iota - 2
+32.93 5.42 308 (44, 85) (-iota^2 + 2*iota + 6)*T - 2*iota^2
+33.28 5.49 309 (44, 85) (4*iota^2 - 3*iota + 4)*T - iota^2 + 4*iota + 2
+Now sieving (1049,iota-494,alpha-1031; 6 conjugates), radius=8.56, gamma1=3.00
+Lattice points: 962
+33.63 5.52 310 (44, 85) (-2*iota^2 - 1)*T - 2*iota
+33.68 5.53 311 (44, 85) (iota^2 + 1)*T - iota^2 - 4*iota
+33.69 5.54 312 (44, 85) (iota^2 - iota - 2)*T - iota^2 - 3*iota + 1
+33.70 5.54 313 (44, 85) (-3*iota + 1)*T - 3*iota
+33.73 5.55 314 (44, 85) (3*iota^2 - 4*iota)*T - iota^2 - 4*iota + 1
+33.75 5.55 315 (44, 85) (-2*iota^2 + 2*iota - 2)*T + iota^2 + 5*iota + 3
+33.94 5.59 316 (44, 85) (iota^2 + 2)*T - 3*iota^2 + 3*iota - 6
+Now sieving (1049,iota-494,alpha-408; 6 conjugates), radius=8.56, gamma1=3.00
+Lattice points: 962
+34.44 5.66 317 (44, 85) (-iota^2 - iota - 2)*T - 2*iota^2 + 2
+34.51 5.68 318 (44, 85) (-iota^2 - 5*iota - 1)*T - iota^2 - iota - 4
+34.52 5.68 319 (44, 85) (iota^2 + 5*iota + 3)*T + 2*iota^2 - 2*iota + 2
+34.53 5.68 320 (44, 85) (-iota^2 + 3*iota + 5)*T - 4*iota^2 + 4
+34.68 5.71 321 (44, 85) -2*iota^2*T - 4*iota^2 - 6*iota - 1
+34.81 5.73 322 (44, 85) (-3*iota^2 + 3*iota - 6)*T - iota^2 - 2
+34.95 5.76 323 (44, 85) (-4*iota^2 - 3*iota - 1)*T - 2*iota - 5
+Now sieving (1289,iota-779,alpha-1251; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 786
+35.17 5.78 324 (44, 85) -iota*T - 2*iota^2 + iota - 1
+35.20 5.78 325 (44, 85) (-2*iota^2 - 2*iota - 2)*T - iota^2 - 3*iota - 1
+35.22 5.79 326 (44, 85) (-2*iota^2 - 3*iota - 3)*T - 2*iota^2 - 5*iota - 3
+35.56 5.86 327 (44, 85) (2*iota^2 - iota + 5)*T - 2*iota
+35.58 5.86 328 (44, 85) (-iota^2 - iota + 4)*T + 4*iota^2 + 2*iota + 3
+35.68 5.87 329 (44, 85) (-iota^2 + iota + 5)*T + 6*iota^2 + iota - 3
+Now sieving (1289,iota-779,alpha-441; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 786
+35.86 5.89 330 (44, 85) (2*iota^2 - 1)*T + 3*iota^2 + 2*iota + 3
+Now sieving (1301,iota-907,alpha-694; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 762
+36.39 5.97 331 (44, 85) (-iota - 1)*T - 2*iota^2 + 1
+36.43 5.97 332 (44, 85) (4*iota^2 + iota - 3)*T + 4
+36.46 5.98 333 (44, 85) (iota^2 + iota + 2)*T - 2*iota^2 - iota + 3
+36.47 5.98 334 (44, 85) (2*iota + 5)*T - iota^2 + 1
+36.47 5.98 335 (44, 85) 3*T - 5*iota^2 + 3
+36.48 5.99 336 (44, 86) 2*T - 4*iota^2 - 4*iota + 5
+36.58 6.01 337 (44, 87) (-iota^2 + 4*iota + 2)*T + 4*iota^2 + 4*iota
+36.76 6.05 338 (44, 87) (-5*iota^2 + iota + 2)*T - 4*iota^2 - 2*iota - 4
+36.89 6.06 339 (44, 87) (iota^2 + 6*iota - 4)*T - 3*iota^2 + iota - 3
+Now sieving (1301,iota-907,alpha-643; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 762
+37.03 6.07 340 (44, 87) (iota^2 - 1)*T + 2*iota + 5
+37.04 6.07 341 (44, 87) (3*iota - 5)*T + 3*iota^2 + iota - 2
+37.06 6.08 342 (44, 87) -4*T + 4*iota^2 + iota - 3
+37.11 6.09 343 (44, 87) (-iota^2 + 3*iota + 4)*T - iota + 3
+37.12 6.09 344 (44, 87) (4*iota^2 + 4*iota)*T + iota^2 - 4*iota - 2
+37.16 6.10 345 (44, 87) (5*iota^2 + iota)*T + 2*iota^2 - 2*iota + 2
+37.39 6.14 346 (44, 87) (-4*iota^2 - iota - 2)*T + 2*iota^2 + 4
+37.41 6.14 347 (44, 87) (-2*iota^2 - 7*iota - 1)*T + 4*iota^2 - iota + 1
+Now sieving (1429,iota-1418,alpha-1276; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 726
+37.59 6.16 348 (44, 87) (-iota^2 - iota - 2)*T - iota + 1
+37.61 6.16 349 (44, 87) (-2*iota^2 - 3*iota - 5)*T + iota^2 + 4
+37.64 6.17 350 (44, 87) (-2*iota^2 - iota)*T + 3*iota^2 - 2*iota - 3
+37.64 6.17 351 (44, 87) (-2*iota^2 - 2*iota)*T + 5*iota^2 - 3*iota - 2
+37.66 6.18 352 (44, 87) (-2*iota^2 - iota - 1)*T + 2*iota^2 + iota - 2
+37.68 6.18 353 (44, 87) (-2*iota^2 - 2*iota - 2)*T + 3*iota^2 + 3*iota
+37.70 6.19 354 (44, 87) (-3*iota^2 - 2*iota - 1)*T + 5*iota^2 + 5*iota - 3
+37.75 6.20 355 (44, 87) (-4*iota^2 + 2*iota + 2)*T - 5*iota - 1
+Now sieving (1429,iota-1418,alpha-467; 6 conjugates), radius=8.56, gamma1=2.65
+Lattice points: 726
+38.14 6.24 356 (44, 87) (2*iota^2 - iota + 1)*T + iota
+38.15 6.25 357 (44, 87) (-iota + 1)*T + iota^2 + iota + 2
+38.20 6.26 358 (44, 87) (3*iota^2 - 2*iota - 3)*T + 2*iota^2 + iota
+38.21 6.26 359 (44, 87) (5*iota^2 - 3*iota - 2)*T + 2*iota^2 + 2*iota
+38.24 6.27 360 (44, 87) (3*iota^2 + 3*iota)*T + 2*iota^2 + 2*iota + 2
+38.26 6.27 361 (44, 87) (3*iota^2 - 6)*T + 4*iota^2 + iota + 1
+38.32 6.28 362 (44, 87) (-5*iota - 1)*T + 4*iota^2 - 2*iota - 2
+38.35 6.29 363 (44, 87) 2*T + 4*iota^2 - iota
+38.35 6.29 364 (44, 87) (-2*iota^2 + 2)*T + 5*iota^2 - iota + 2
+38.50 6.31 365 (44, 87) (4*iota^2 - iota + 4)*T - iota^2 - iota + 4
+Now sieving (1609,iota-791,alpha-1174; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 636
+38.79 6.35 366 (44, 87) (iota^2 - 3*iota + 3)*T - 2*iota^2 - iota + 1
+38.90 6.37 367 (44, 87) 2*T - 5*iota - 2
+39.04 6.39 368 (44, 87) (5*iota^2 - 4)*T - 4*iota^2 + 2*iota - 2
+39.08 6.40 369 (44, 87) (-5*iota^2 + 2*iota - 1)*T - 6*iota^2 - 1
+Now sieving (1609,iota-791,alpha-651; 6 conjugates), radius=8.56, gamma1=2.24
+Lattice points: 636
+39.25 6.41 370 (44, 87) (-5*iota^2 + 3*iota)*T + iota^2 + 4*iota - 4
+39.25 6.41 371 (44, 87) -3*iota^2*T + 4*iota - 3
+39.27 6.42 372 (44, 87) (-2*iota^2 + 2*iota)*T - 3*iota^2 + iota - 2
+39.27 6.42 373 (44, 87) (-iota^2 - 1)*T - 3*iota^2 + 2*iota - 1
+39.29 6.43 374 (44, 87) (-3*iota^2 + 6*iota - 2)*T - 4*iota^2 - 1
+39.56 6.47 375 (44, 87) (-4*iota^2 - 3*iota - 1)*T + 4*iota^2 - 2*iota + 2
+Now sieving (1709,iota-963,alpha-1576; 6 conjugates), radius=8.56, gamma1=3.16
+Lattice points: 591
+39.74 6.49 376 (44, 87) (3*iota^2 + 4*iota - 1)*T - 2*iota^2 + 3*iota - 1
+39.75 6.49 377 (44, 87) (iota^2 + iota)*T - 2*iota^2 + 2*iota - 2
+40.09 6.56 378 (44, 87) (-iota^2 - 5*iota - 1)*T - 6*iota^2 + 2*iota + 2
+Now sieving (1709,iota-963,alpha-257; 6 conjugates), radius=8.56, gamma1=3.16
+Lattice points: 591
+40.22 6.56 379 (44, 87) (iota^2 - iota + 4)*T + 2*iota^2 - 2*iota
+40.23 6.57 380 (44, 87) (2*iota^2 - 2*iota)*T + 5*iota^2 - 3*iota + 2
+40.24 6.57 381 (44, 87) (4*iota^2 - 3*iota - 1)*T - 3*iota^2 + 4*iota + 1
+40.28 6.58 382 (44, 87) (-3*iota^2 - 3)*T - 3*iota^2 + iota - 4
+Now sieving (1721,iota-1451,alpha-1259; 6 conjugates), radius=8.56, gamma1=3.32
+Lattice points: 587
+40.67 6.64 383 (44, 87) (2*iota + 3)*T + iota
+40.72 6.65 384 (44, 87) (-3*iota + 3)*T - 4*iota^2 + 2*iota - 2
+40.75 6.65 385 (44, 87) (7*iota^2 + 3*iota - 1)*T - 2*iota^2 - 2*iota + 2
+40.78 6.66 386 (44, 87) (iota^2 - 3*iota - 4)*T - iota^2 - 4*iota + 4
+40.81 6.67 387 (44, 87) (-iota^2 - 4*iota - 1)*T - 2*iota^2 - 3*iota + 4
+40.99 6.69 388 (44, 87) (3*iota^2 - 2*iota + 1)*T + 2*iota^2 + 5*iota + 1
+41.05 6.71 389 (44, 87) (3*iota^2 - 3*iota + 2)*T + 6*iota^2 + 3*iota
+Now sieving (1721,iota-1451,alpha-786; 6 conjugates), radius=8.56, gamma1=3.32
+Lattice points: 587
+41.14 6.71 390 (44, 87) -iota*T + 2*iota + 3
+41.15 6.71 391 (44, 87) (-3*iota^2 + iota - 2)*T - 2*iota^2 + 2*iota
+41.18 6.72 392 (44, 87) (-2*iota^2 - 4*iota)*T + 2*iota^2 + 3*iota - 1
+41.20 6.72 393 (44, 87) (-4*iota^2 + 2*iota - 2)*T + 3*iota - 3
+41.21 6.72 394 (44, 87) (-4*iota^2 - 1)*T + 3*iota^2 + 4*iota - 5
+41.26 6.73 395 (44, 87) (-iota^2 - 4*iota + 4)*T - iota^2 + 3*iota + 4
+41.39 6.75 396 (44, 87) (iota^2 - 4*iota - 2)*T + iota^2 + 6*iota
+41.47 6.77 397 (44, 87) (3*iota^2 + 3)*T + iota^2 + 3*iota - 2
+41.48 6.77 398 (44, 87) (2*iota^2 + 2*iota + 2)*T + 5*iota
+
+Search space size: A=15.8 bits
+Norm bits in [-3,3]^6: (33.44, 23.36)
+41.59 6.78 399 (44, 87) -T
+41.59 6.78 400 (44, 87) -iota*T - 1
+41.59 6.78 401 (44, 87) iota^2*T - 1
+41.60 6.78 402 (44, 87) -iota^2*T - 1
+41.60 6.78 403 (44, 87) T - iota
+41.60 6.78 404 (44, 87) T - iota^2
+41.61 6.78 405 (44, 87) T + iota^2
+41.62 6.78 406 (44, 87) T + iota - 1
+41.62 6.78 407 (44, 87) iota*T + iota - 1
+41.63 6.78 408 (44, 87) iota^2*T - iota - 1
+41.63 6.78 409 (44, 87) -iota^2*T - iota - 1
+41.65 6.79 410 (44, 87) -iota^2*T - iota^2 - 1
+41.67 6.79 411 (44, 87) (iota + 1)*T - iota^2
+41.68 6.79 412 (44, 87) (iota + 1)*T + iota^2
+41.68 6.79 413 (44, 87) (iota^2 + 1)*T + iota^2
+41.70 6.79 414 (44, 87) iota*T - iota^2 + iota - 1
+41.72 6.79 415 (44, 87) (iota + 1)*T + iota - 1
+41.72 6.79 416 (44, 87) (iota - 1)*T - iota - 1
+41.73 6.80 417 (44, 87) (iota^2 - iota)*T - iota - 1
+41.74 6.80 418 (44, 87) (-iota^2 + iota)*T - iota - 1
+41.75 6.80 419 (44, 87) (iota^2 + 1)*T + iota^2 - 1
+41.75 6.80 420 (44, 87) (iota^2 - 1)*T - iota^2 - 1
+41.76 6.80 421 (44, 87) (-iota^2 + 1)*T - iota^2 - 1
+41.76 6.80 422 (44, 87) (-iota^2 - 1)*T + iota^2 - 1
+41.78 6.80 423 (44, 87) (iota + 1)*T - iota^2 + iota
+41.78 6.80 424 (44, 87) (iota + 1)*T + iota^2 - iota
+41.81 6.80 425 (44, 87) (iota^2 - iota + 1)*T - iota
+41.84 6.81 426 (44, 87) (-iota^2 + 1)*T - iota^2 + iota - 1
+41.89 6.81 427 (44, 87) (iota^2 - iota + 1)*T + iota^2 - 1
+41.92 6.81 428 (44, 87) (iota^2 + iota + 1)*T + iota^2 - iota - 1
+41.92 6.81 429 (44, 87) (iota^2 + iota - 1)*T - iota^2 + iota - 1
+41.93 6.81 430 (44, 87) (iota^2 + iota - 1)*T + iota^2 - iota - 1
+41.93 6.82 431 (44, 87) (iota^2 - iota + 1)*T + iota^2 - iota - 1
+41.94 6.82 432 (44, 87) (iota^2 - iota - 1)*T - iota^2 - iota - 1
+41.95 6.82 433 (44, 87) (-iota^2 + iota + 1)*T - iota^2 - iota - 1
+41.95 6.82 434 (44, 87) (-iota^2 + iota + 1)*T + iota^2 + iota - 1
+41.96 6.82 435 (44, 87) (-iota^2 - iota - 1)*T + iota^2 - iota - 1
+41.96 6.82 436 (44, 87) T - 2
+41.96 6.82 437 (44, 87) -T - 2
+41.97 6.82 438 (44, 87) iota^2*T - 2
+41.98 6.82 439 (44, 87) -iota^2*T - 2
+42.01 6.82 440 (44, 87) (iota - 1)*T - 2
+42.01 6.83 441 (44, 87) (-iota + 1)*T - 2
+42.03 6.83 442 (44, 87) (iota^2 + iota)*T - 2
+42.03 6.83 443 (44, 87) (-iota^2 - iota)*T - 2
+42.17 6.84 444 (44, 87) (iota - 1)*T - iota^2 + iota - 2
+42.24 6.85 445 (44, 87) (iota^2 - iota - 1)*T - iota - 2
+42.27 6.85 446 (44, 87) (iota^2 - iota + 1)*T + iota^2 - 2
+42.27 6.85 447 (44, 87) (iota^2 - iota - 1)*T - iota^2 - 2
+42.27 6.85 448 (44, 87) (-iota^2 + iota + 1)*T - iota^2 - 2
+42.41 6.86 449 (44, 87) (iota^2 + 1)*T + iota^2 - 2*iota
+42.61 6.88 450 (44, 87) (-iota^2 + iota + 1)*T - 2*iota^2
+42.62 6.89 451 (44, 87) (iota + 1)*T - 2*iota^2 - iota - 1
+42.71 6.90 452 (44, 87) (-iota^2 + iota + 1)*T - 2*iota^2 - iota - 1
+42.76 6.90 453 (44, 87) 2*T - 1
+42.77 6.90 454 (44, 87) 2*T - iota^2
+42.77 6.90 455 (44, 87) 2*T + iota^2
+42.78 6.90 456 (44, 87) 2*T + iota - 1
+42.79 6.90 457 (44, 87) 2*T + iota^2 - 1
+42.79 6.90 458 (44, 87) 2*T - iota^2 - iota
+42.80 6.91 459 (44, 87) 2*T + iota^2 + iota
+42.91 6.92 460 (44, 87) (iota^2 + 2)*T + iota^2 - iota - 1
+42.98 6.92 461 (44, 87) -2*T - 1
+43.04 6.93 462 (44, 87) (-iota^2 - 2)*T + iota^2 - iota - 1
+43.05 6.93 463 (44, 87) (-iota^2 + iota - 2)*T + iota - 1
+43.12 6.94 464 (44, 87) (-iota^2 + 2*iota)*T - iota^2 - 1
+43.30 6.95 465 (44, 87) (2*iota^2 + iota + 1)*T - iota - 1
+43.33 6.96 466 (44, 87) (2*iota^2 + iota + 1)*T + iota^2 - iota - 1
+43.35 6.96 467 (44, 87) -2*iota^2*T + iota^2 - iota - 1
+43.42 6.97 468 (44, 87) iota^2*T - 2*iota - 2
+43.53 6.98 469 (44, 87) (iota^2 + iota - 1)*T - iota^2 + 2*iota - 2
+43.53 6.98 470 (44, 87) (-iota^2 - iota + 1)*T - iota^2 + 2*iota - 2
+43.71 7.00 471 (44, 87) (iota^2 - iota - 1)*T - 2*iota^2 - 2
+43.79 7.00 472 (44, 87) (iota^2 - iota + 1)*T + 2*iota^2 + iota - 2
+43.97 7.02 473 (44, 87) (-iota^2 - 2)*T - iota^2 - iota - 2
+44.11 7.03 474 (44, 87) (iota^2 + 2*iota - 1)*T - iota - 2
+44.15 7.04 475 (44, 87) -2*iota*T - iota^2 - 2
+44.57 7.08 476 (44, 87) (-iota^2 - 1)*T - 2*iota^2 + 2*iota
+44.67 7.09 477 (44, 87) (iota^2 + 2)*T + 2*iota
+45.06 7.12 478 (44, 87) (-2*iota^2 + iota - 1)*T - iota^2 - 2*iota - 1
+45.09 7.12 479 (44, 87) 2*T - 2*iota^2 + iota - 1
+45.39 7.15 480 (44, 87) -2*iota*T - 2*iota^2 - 1
+45.44 7.15 481 (44, 87) (-iota^2 - 2*iota - 1)*T - 2*iota^2 + iota - 1
+45.45 7.16 482 (44, 87) (2*iota^2 + iota)*T - 2*iota^2 - 1
+45.46 7.16 483 (44, 87) (2*iota^2 + 1)*T - 2*iota^2 - iota
+45.48 7.16 484 (44, 87) (2*iota^2 + iota - 1)*T - 2*iota^2 - 1
+45.52 7.16 485 (44, 87) (2*iota^2 + 1)*T + 2*iota^2 - iota - 1
+45.52 7.16 486 (44, 87) (2*iota^2 + 1)*T + 2*iota^2 + iota - 1
+45.56 7.17 487 (44, 87) (-2*iota^2 + iota + 1)*T - 2*iota^2 - 1
+45.56 7.17 488 (44, 87) (-2*iota^2 - iota + 1)*T - 2*iota^2 - 1
+45.59 7.17 489 (44, 87) (-2*iota^2 - 1)*T + 2*iota^2 + iota - 1
+45.60 7.17 490 (44, 87) (2*iota + 2)*T + iota^2
+45.63 7.17 491 (44, 87) (-iota^2 + 2*iota - 2)*T + iota^2 + iota
+45.63 7.17 492 (44, 87) (-iota^2 + 2*iota - 2)*T + iota^2 + iota - 1
+45.65 7.17 493 (44, 87) (iota^2 - 2*iota + 2)*T + iota^2 + iota - 1
+45.72 7.18 494 (44, 87) (2*iota^2 - iota + 2)*T + iota
+45.85 7.19 495 (44, 87) (-2*iota^2 - 2)*T + iota^2 - iota - 1
+45.94 7.20 496 (44, 87) (-2*iota^2 + 2*iota)*T - iota^2 - 1
+46.02 7.21 497 (44, 87) (iota^2 + 1)*T - 2*iota^2 + 2*iota - 2
+46.17 7.22 498 (44, 87) (-iota^2 - 2)*T - iota^2 + 2*iota - 2
+46.41 7.24 499 (44, 87) (-2*iota^2 + iota - 1)*T + 2*iota - 2
+46.56 7.26 500 (44, 87) (iota^2 - iota - 2)*T - 2*iota^2 - 2
+46.63 7.27 501 (44, 87) (2*iota + 1)*T - 2*iota^2 - 2
+47.02 7.30 502 (44, 87) (-iota^2 + 2*iota - 2)*T - iota^2 - 2
+47.23 7.32 503 (44, 87) (-2*iota^2 - 2)*T + iota^2 - iota - 2
+47.35 7.33 504 (44, 87) (-2*iota^2 + 2*iota)*T - iota^2 + iota - 2
+47.51 7.34 505 (44, 87) (iota^2 + 2*iota)*T - 2*iota^2 + 2*iota - 1
+47.77 7.37 506 (44, 87) (2*iota^2 + 2)*T - 2*iota - 1
+48.46 7.43 507 (44, 87) (2*iota^2 - 2*iota + 2)*T - iota^2 - 1
+48.47 7.43 508 (44, 87) (2*iota^2 - 2*iota + 2)*T - iota^2 - iota
+48.51 7.43 509 (44, 87) (-iota + 2)*T - 2*iota^2 + 2*iota - 2
+49.31 7.51 510 (44, 87) (-2*iota^2 - 2*iota)*T - 2*iota^2 - iota - 2
+49.54 7.53 511 (44, 87) (2*iota^2 + iota + 2)*T + 2*iota^2 + 2*iota
+49.61 7.54 512 (44, 87) (2*iota^2 + 2*iota)*T + 2*iota^2 - 2*iota - 1
+49.63 7.54 513 (44, 87) (2*iota^2 - 2*iota - 1)*T - 2*iota^2 - 2*iota
+49.64 7.54 514 (44, 87) (2*iota^2 - 2*iota - 1)*T + 2*iota^2 + 2*iota
+49.67 7.55 515 (44, 87) (-2*iota^2 - 2*iota)*T + 2*iota^2 - 2*iota - 1
+49.81 7.56 516 (44, 87) (-iota^2 - 2*iota + 2)*T - 2*iota^2 + 2*iota - 2
+49.89 7.57 517 (44, 87) (-2*iota^2 + iota - 2)*T + 2*iota^2 + 2*iota - 2
+50.06 7.58 518 (44, 87) (-2*iota^2 + 2*iota - 2)*T + 2*iota^2 - 2*iota - 1
+50.07 7.58 519 (45, 87) T - 3
+50.07 7.58 520 (45, 87) -T - 3
+50.08 7.59 521 (45, 87) iota^2*T - 3
+50.09 7.59 522 (45, 87) -iota^2*T - 3
+50.13 7.59 523 (45, 87) (-iota^2 - iota)*T - 3
+50.19 7.60 524 (45, 87) (-iota - 1)*T - iota^2 - 3
+50.22 7.60 525 (45, 87) (-iota^2 - iota + 1)*T - 3
+50.38 7.61 526 (45, 87) iota^2*T - 2*iota - 3
+50.39 7.61 527 (45, 87) (-iota^2 + 1)*T - iota^2 - 2*iota - 3
+50.41 7.62 528 (45, 87) (iota^2 + 1)*T + 2*iota - 3
+50.41 7.62 529 (45, 87) (iota^2 + iota)*T - iota^2 + 2*iota - 3
+50.67 7.64 530 (45, 87) 2*T - 3
+50.69 7.64 531 (45, 87) (iota + 2)*T + iota - 3
+50.70 7.64 532 (45, 87) (iota^2 + 2)*T + iota - 3
+50.80 7.65 533 (45, 87) -2*T - 3
+50.82 7.65 534 (45, 87) (-iota - 2)*T + iota - 3
+50.85 7.66 535 (45, 87) (iota - 2)*T - iota^2 + iota - 3
+50.90 7.66 536 (45, 87) (iota^2 - iota - 2)*T - iota^2 + iota - 3
+50.92 7.66 537 (45, 87) 2*iota*T - 3
+50.95 7.67 538 (45, 87) (2*iota - 1)*T - iota - 3
+51.04 7.68 539 (45, 87) -2*iota*T - 3
+51.06 7.68 540 (45, 87) (-2*iota + 1)*T - iota - 3
+51.54 7.72 541 (45, 87) (-iota + 1)*T - 2*iota^2 + 2*iota - 3
+51.73 7.74 542 (45, 87) (-iota^2 + 2*iota - 1)*T - 2*iota - 3
+51.75 7.74 543 (45, 87) (iota^2 + 2*iota)*T - iota^2 + 2*iota - 3
+51.77 7.74 544 (45, 87) -2*iota*T - iota^2 - 2*iota - 3
+51.83 7.75 545 (45, 87) (2*iota^2 + 1)*T + iota^2 - 2*iota - 3
+51.86 7.75 546 (45, 87) 2*iota^2*T - iota^2 + 2*iota - 3
+51.91 7.75 547 (45, 87) (2*iota^2 - iota + 1)*T - iota^2 + 2*iota - 3
+51.92 7.76 548 (45, 87) (-2*iota^2 - 1)*T + iota^2 - 2*iota - 3
+52.17 7.78 549 (45, 87) (-iota^2 - 2)*T + 2*iota^2 + iota - 3
+52.54 7.81 550 (45, 87) (-2*iota^2 - 1)*T + 2*iota^2 - iota - 3
+52.57 7.82 551 (45, 87) (iota^2 + 2*iota + 2)*T - iota^2 - 3
+52.70 7.83 552 (45, 87) (2*iota^2 + 2)*T - 3
+52.81 7.84 553 (45, 87) (2*iota^2 - iota - 2)*T - iota^2 + iota - 3
+52.82 7.84 554 (45, 87) (-2*iota^2 - iota + 2)*T - 3
+52.84 7.84 555 (45, 87) (-2*iota^2 - 2)*T - 3
+52.95 7.86 556 (45, 87) (2*iota^2 + 2*iota + 1)*T - iota^2 - 3
+53.22 7.88 557 (45, 87) (-iota^2 + iota - 2)*T + 2*iota^2 - 2*iota - 3
+53.50 7.91 558 (45, 87) (2*iota - 2)*T - iota^2 - 2*iota - 3
+53.69 7.93 559 (45, 87) (-2*iota^2 - 2)*T + iota^2 + 2*iota - 3
+53.89 7.95 560 (45, 87) (-iota^2 - 2*iota - 2)*T - 2*iota^2 + iota - 3
+53.95 7.95 561 (45, 87) (2*iota^2 - 2)*T - 2*iota^2 - 3
+54.00 7.96 562 (45, 87) (-2*iota^2 + iota + 2)*T - 2*iota^2 + iota - 3
+54.27 7.98 563 (45, 87) (-2*iota^2 + 2*iota - 2)*T - iota^2 + iota - 3
+55.05 8.04 564 (45, 87) -iota^2*T - 2*iota^2 - 3*iota - 1
+55.11 8.05 565 (45, 87) (iota^2 + 2)*T - iota^2 - 3*iota - 1
+55.23 8.06 566 (45, 87) (iota^2 - 2*iota - 1)*T - 3*iota
+55.24 8.06 567 (45, 87) (iota^2 - 2*iota)*T - iota^2 - 3*iota - 1
+55.65 8.10 568 (45, 87) (2*iota - 1)*T - 2*iota^2 - 3*iota - 1
+56.03 8.14 569 (45, 87) (-2*iota^2 - 2*iota - 1)*T - 3*iota
+56.07 8.14 570 (45, 87) (-iota^2 - iota - 2)*T + 2*iota^2 - 3*iota - 2
+56.29 8.16 571 (45, 87) (2*iota^2 - 2*iota - 1)*T - 3*iota - 2
+56.31 8.16 572 (45, 87) (-2*iota^2 + 2*iota + 1)*T - 3*iota - 2
+56.52 8.18 573 (45, 87) (2*iota^2 + 2*iota - 2)*T + iota^2 - 3*iota - 1
+56.87 8.21 574 (45, 87) (2*iota + 1)*T + 3*iota - 1
+56.87 8.21 575 (45, 87) (2*iota + 1)*T - iota^2 + 3*iota - 1
+56.89 8.21 576 (45, 87) (-2*iota - 1)*T + 3*iota - 1
+57.12 8.23 577 (45, 87) (2*iota^2 + 1)*T - 2*iota^2 + 3*iota - 1
+57.30 8.25 578 (45, 87) (2*iota^2 + 1)*T - 2*iota^2 + 3*iota - 2
+57.35 8.25 579 (45, 87) (-2*iota - 2)*T - iota^2 + 3*iota - 2
+57.53 8.26 580 (45, 87) (-2*iota^2 - 2*iota - 2)*T + iota^2 + 3*iota - 1
+57.66 8.27 581 (45, 87) (-iota^2 + iota + 1)*T - 3*iota^2
+58.12 8.31 582 (45, 87) (-iota^2 - 2*iota)*T - 3*iota^2 + iota - 1
+58.21 8.32 583 (45, 87) (-2*iota^2 - 1)*T - 3*iota^2 - iota
+58.23 8.32 584 (45, 87) (-2*iota^2 + iota + 1)*T - 3*iota^2 - iota
+58.28 8.33 585 (45, 87) -iota*T - 3*iota^2 + 2*iota - 2
+59.24 8.41 586 (45, 87) (iota^2 + 2)*T - 3*iota^2 + 2*iota - 2
+59.53 8.44 587 (45, 87) (2*iota^2 - iota - 2)*T - 3*iota^2 - iota - 2
+59.80 8.46 588 (45, 87) (2*iota^2 + 2*iota)*T - 3*iota^2 + 2*iota - 1
+59.84 8.46 589 (45, 87) (-2*iota^2 - 2*iota)*T - 3*iota^2 + 2*iota - 1
+59.88 8.47 590 (45, 87) (2*iota^2 - 2*iota - 2)*T - 3*iota^2 - 1
+60.60 8.53 591 (45, 87) (-2*iota^2 + iota - 1)*T + 3*iota^2 + 2*iota - 2
+60.88 8.55 592 (45, 87) 3*T - 1
+60.89 8.55 593 (45, 87) 3*T - iota^2
+60.89 8.55 594 (45, 87) 3*T + iota^2
+60.92 8.55 595 (45, 87) 3*T + iota^2 + iota
+60.94 8.55 596 (45, 87) 3*T + iota^2 + iota - 1
+61.07 8.57 597 (45, 87) 3*T - 2
+61.10 8.57 598 (45, 87) (-iota + 3)*T - iota^2 - 2
+61.18 8.58 599 (45, 87) 3*T - 2*iota
+61.24 8.58 600 (45, 87) 3*T + 2*iota
+61.67 8.62 601 (45, 87) (iota^2 + 3)*T - iota^2 - 2*iota - 2
+61.70 8.63 602 (45, 87) (iota + 3)*T + 2*iota - 2
+61.73 8.63 603 (45, 87) 3*T - 2*iota^2 - 2
+61.94 8.65 604 (45, 87) (iota + 3)*T - 2*iota^2 - 2*iota
+61.95 8.65 605 (45, 87) (iota^2 + 3)*T - 2*iota^2 - 2*iota - 1
+62.26 8.68 606 (45, 87) (iota^2 - 2*iota + 3)*T + 2*iota^2
+62.79 8.73 607 (45, 87) (2*iota^2 - iota + 3)*T + 2*iota^2 - iota - 2
+63.41 8.79 608 (45, 87) -3*T - 1
+63.43 8.79 609 (45, 87) -3*T - iota^2 + iota - 1
+63.51 8.79 610 (45, 87) -3*T - 2
+63.57 8.80 611 (45, 87) (-iota^2 + iota - 3)*T + iota - 2
+63.60 8.80 612 (45, 87) (-iota^2 + iota - 3)*T + iota^2 - iota - 2
+63.95 8.83 613 (45, 87) -3*T - 2*iota^2 - 2
+64.02 8.84 614 (45, 87) -3*T + 2*iota^2 + iota - 2
+64.24 8.86 615 (45, 87) (-2*iota - 3)*T - iota^2 + 2*iota - 1
+64.40 8.87 616 (45, 87) (-2*iota^2 + 2*iota - 3)*T + iota - 1
+64.48 8.88 617 (45, 87) (-iota^2 + iota - 3)*T - 2*iota^2 + 2*iota - 2
+64.53 8.88 618 (45, 87) (-iota^2 + 2*iota - 3)*T + 2*iota - 2
+64.54 8.88 619 (45, 87) (-iota^2 - 2*iota - 3)*T + 2*iota - 2
+64.61 8.89 620 (45, 87) (iota^2 + 2*iota - 3)*T - 2*iota^2 - 2
+64.70 8.90 621 (45, 87) (-2*iota^2 - 3)*T + 2*iota^2 - 2
+65.20 8.94 622 (45, 87) (iota^2 + 3*iota + 1)*T - iota^2 - 2
+65.24 8.94 623 (45, 87) (iota^2 + 3*iota + 1)*T - iota^2 + 2*iota
+65.36 8.95 624 (45, 87) (-iota^2 + 3*iota - 1)*T - iota^2 - 2*iota - 2
+65.72 8.98 625 (45, 87) (iota^2 + 3*iota - 1)*T - 2*iota^2 - 2*iota - 2
+65.79 8.99 626 (45, 87) (-iota^2 + 3*iota - 2)*T - 2*iota - 2
+66.34 9.03 627 (45, 87) (-iota^2 - 3*iota)*T - 2*iota^2 + iota - 1
+66.58 9.05 628 (45, 87) -3*iota*T - 2*iota^2 - 2*iota - 1
+66.59 9.05 629 (45, 87) (iota^2 - 3*iota)*T - 2*iota^2 - 2*iota - 1
+66.65 9.06 630 (45, 87) (-2*iota^2 - 3*iota - 1)*T + 2*iota - 1
+66.95 9.08 631 (45, 87) (2*iota^2 - 3*iota - 2)*T - iota^2 - iota - 2
+68.06 9.17 632 (45, 87) (3*iota^2 - 2*iota + 2)*T - iota
+68.32 9.20 633 (45, 87) (3*iota^2 - 2*iota + 2)*T - iota^2 - 2
+68.42 9.21 634 (45, 87) (3*iota^2 - 2*iota + 1)*T - 2*iota^2 - 2*iota
+68.43 9.21 635 (45, 87) (3*iota^2 - 2*iota + 1)*T + 2*iota^2 + 2*iota
+68.72 9.23 636 (45, 87) -3*iota^2*T + iota^2 - iota - 1
+68.81 9.24 637 (45, 87) -3*iota^2*T - iota^2 - 2*iota - 1
+69.39 9.29 638 (45, 87) (-3*iota^2 - 1)*T + 2*iota^2 - 2*iota - 2
+69.53 9.30 639 (45, 87) (-3*iota^2 - iota - 2)*T + 2*iota^2 - iota - 2
+69.96 9.33 640 (45, 87) -2*T - iota^2 - 3*iota - 3
+70.02 9.34 641 (45, 87) (iota^2 - 2*iota + 1)*T - 3*iota - 3
+70.21 9.36 642 (45, 87) (iota^2 - 2*iota + 2)*T - 3*iota - 3
+70.63 9.39 643 (45, 87) (2*iota^2 + iota - 1)*T - iota^2 + 3*iota - 3
+71.90 9.50 644 (45, 87) (iota^2 + iota - 2)*T - 3*iota^2 - 2*iota - 3
+72.84 9.58 645 (45, 87) (iota^2 + 2*iota)*T + 3*iota^2 - 2*iota - 3
+73.29 9.62 646 (45, 87) (iota^2 - iota + 3)*T + 2*iota^2 - iota - 3
+73.44 9.64 647 (45, 87) (-2*iota^2 + iota + 3)*T - iota^2 + iota - 3
+74.12 9.69 648 (45, 87) (-iota^2 + iota - 3)*T + 2*iota - 3
+74.37 9.71 649 (45, 87) -3*T - 2*iota^2 - 2*iota - 3
+74.68 9.74 650 (45, 87) (-2*iota^2 - 2*iota - 3)*T - 3
+75.79 9.83 651 (45, 87) (-iota^2 - 3*iota + 1)*T - iota^2 - iota - 3
+76.61 9.89 652 (45, 87) 3*iota^2*T - 2*iota - 3
+77.57 9.97 653 (45, 87) (-3*iota^2 + iota - 1)*T - 3
+77.57 9.97 654 (45, 87) (-3*iota^2 - iota + 1)*T - 3
+77.65 9.98 655 (45, 87) -3*iota^2*T - 2*iota - 3
+78.69 10.08 656 (45, 87) (-3*iota^2 + 2*iota - 2)*T - 2*iota^2 - iota - 3
+78.92 10.09 657 (45, 87) (iota^2 - 2*iota + 2)*T - 3*iota^2 - 3*iota
+79.35 10.13 658 (45, 87) (2*iota^2 + 2*iota)*T - 3*iota^2 + 3*iota - 2
+79.35 10.13 659 (45, 87) (-2*iota^2 - 2*iota)*T - 3*iota^2 + 3*iota - 2
+80.09 10.19 660 (45, 87) (iota^2 + iota + 3)*T + iota^2 + 3*iota - 1
+81.78 10.32 661 (45, 87) (2*iota^2 - 3*iota + 1)*T - iota^2 - 3*iota - 2
+82.28 10.36 662 (45, 87) (3*iota^2 - 2)*T + iota^2 - 3*iota - 1
+82.65 10.39 663 (45, 87) (3*iota^2 + iota + 1)*T - 2*iota^2 + 3*iota
+82.72 10.40 664 (45, 87) (3*iota^2 - 2*iota + 1)*T + iota^2 + 3*iota
+82.94 10.41 665 (45, 87) -3*iota^2*T - iota^2 - 3*iota - 2
+83.64 10.47 666 (45, 87) 3*T - 3*iota^2 + 2*iota - 1
+84.32 10.52 667 (45, 87) (2*iota + 3)*T + 3*iota^2
+84.63 10.55 668 (45, 87) -3*T - 3*iota^2 + iota - 1
+85.14 10.59 669 (45, 87) (-2*iota^2 - iota - 3)*T - 3*iota^2 + 2*iota - 2
+86.14 10.67 670 (45, 87) (iota^2 + 3*iota + 2)*T + 3*iota^2
+86.40 10.70 671 (45, 87) (-iota^2 - 3*iota)*T - 3*iota^2 + 2*iota - 1
+86.45 10.70 672 (45, 87) (2*iota^2 - 3*iota)*T - 3*iota^2 - iota - 1
+88.30 10.85 673 (45, 87) (iota^2 + 3*iota + 3)*T - 2
+88.35 10.85 674 (45, 87) (3*iota + 3)*T - iota^2 + 2*iota - 2
+88.94 10.90 675 (45, 87) (-3*iota - 3)*T - iota^2 + 2*iota - 1
+89.96 10.99 676 (45, 87) (3*iota^2 + 2*iota + 3)*T + 2*iota^2 - 1
+90.81 11.06 677 (45, 87) (-3*iota^2 - 2*iota - 3)*T + iota^2 + iota - 2
+91.12 11.08 678 (45, 87) (3*iota^2 + 3*iota + 1)*T + 2*iota^2 + iota - 1
+91.27 11.10 679 (45, 87) (3*iota^2 - 3*iota + 1)*T + iota^2 - iota - 2
+91.43 11.11 680 (45, 87) (3*iota^2 - 3*iota + 2)*T - 2*iota^2 - 2*iota
+91.43 11.11 681 (45, 87) (3*iota^2 - 3*iota + 2)*T + 2*iota^2 + 2*iota
+91.86 11.14 682 (45, 87) (-iota^2 + 2*iota + 2)*T - 3*iota^2 - 3*iota - 3
+92.20 11.18 683 (45, 87) (-2*iota^2 - 2*iota + 1)*T + 3*iota^2 - 3*iota - 3
+92.40 11.19 684 (45, 87) (iota + 3)*T + 3*iota - 3
+92.81 11.22 685 (45, 87) (-2*iota^2 - iota - 3)*T - iota^2 + 3*iota - 3
+92.98 11.24 686 (45, 87) (-2*iota^2 + 3*iota + 1)*T - iota^2 - 3*iota - 3
+93.23 11.26 687 (45, 87) (-3*iota + 2)*T - iota^2 - 3*iota - 3
+93.25 11.26 688 (45, 87) (-iota^2 - 3*iota + 2)*T - iota^2 - 3*iota - 3
+93.77 11.31 689 (45, 87) (3*iota^2 - 2*iota + 2)*T + 3*iota - 3
+96.94 11.57 690 (45, 87) (-iota^2 + 3*iota - 3)*T - 2*iota^2 - iota - 3
+97.03 11.57 691 (45, 87) (-3*iota + 3)*T - iota - 3
+98.45 11.69 692 (45, 87) (3*iota^2 - 3*iota)*T - 2*iota^2 + 2*iota - 3
+98.63 11.70 693 (45, 87) (-3*iota^2 + 3*iota - 2)*T - iota^2 + iota - 3
+99.19 11.75 694 (45, 87) (-iota^2 + iota - 3)*T - 3*iota^2 + 3*iota - 2
+100.49 11.86 695 (45, 87) (iota^2 + 3*iota + 3)*T + 3*iota - 2
+100.50 11.86 696 (45, 87) (iota^2 + 3*iota + 3)*T + iota^2 + 3*iota - 2
+102.00 11.98 697 (45, 87) (-3*iota^2 + 3*iota + 2)*T + iota^2 + 3*iota - 1
+104.23 12.15 698 (45, 87) (3*iota^2 + 3*iota + 3)*T + iota^2 - 2*iota - 2
+104.44 12.17 699 (45, 87) (3*iota^2 - 3*iota - 3)*T + 2*iota^2 + 2*iota - 1
+104.81 12.21 700 (45, 87) (-2*iota^2 - 3)*T + 3*iota^2 - 3*iota - 3
+104.82 12.21 701 (45, 87) (-2*iota^2 + 2*iota - 3)*T + 3*iota^2 - 3*iota - 3
+107.27 12.42 702 (45, 87) (3*iota^2 - 3*iota - 3)*T - 2*iota^2 - 3
+108.63 12.53 703 (45, 87) (-3*iota^2 - 3*iota + 3)*T - 3*iota^2 + 2*iota - 2

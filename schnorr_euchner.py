@@ -52,7 +52,7 @@ class SchnorrEuchnerEnumeration(object):
             else:
                 self.vectors.append(vector([v] + tail)*self.LM)
 
-if __name__ == '__main__':        
+if __name__ == '__main__':
     Lq = matrix([(587, 0, 0, 0, 0, 0),
                  (-383, 1, 0, 0, 0, 0),
                  (0, -383, 1, 0, 0, 0),
