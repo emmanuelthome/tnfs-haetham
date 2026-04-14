@@ -19549,3 +19549,7 @@ ratio =  32895
 character ratio =  32895
 ratio =  32895
 Skipping unit computations since discriminants are large
+
+---
+see example_12_p_17_auto_indiv_log.md for the follow-up of this
+computation, with individual logs.

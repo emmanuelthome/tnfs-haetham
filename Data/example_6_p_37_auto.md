@@ -743,3 +743,7 @@ Vlog of units_orbits
 Schirokauer maps on units
 [(0, 0), (0, 0), (0, 0), (33, 1), (27, 36)]
 [(0), (0)]
+
+---
+see example_6_p_37_auto_indiv_log.md for the follow-up of this
+computation, with individual logs.
